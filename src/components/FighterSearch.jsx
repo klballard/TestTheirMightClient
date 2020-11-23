@@ -1,30 +1,26 @@
 import React, {useState} from 'react';
 import {Form, Container, Row, Input, InputGroup, Button, Jumbotron} from 'reactstrap';
 import {makeStyles} from '@material-ui/core';
+import FighterCard from './FighterCard';
 
-let apiKey = 10157622918662045;
-let baseUrl = 'https://superheroapi.com/api/';
 
 const FighterSearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [fighters, setFighters] = useState([]);
+    const [results, setResults] = useState([]);
     const [searchMessage, setSearchMessage] = useState(`Find a combatant!`);
-
-    const url = `${baseUrl}${apiKey}/search/${searchQuery}`
+    let proxyURL ="https://cors-anywhere.herokuapp.com/";
+    let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
     const getData = () => {
-        let data = fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-            setFighters(data.hits);
-            setSearchQuery('');
-            if (fighters.length === 0) {
-                setSearchMessage(`That character does not exist in the API - sorry!`)
-            } else {
-                setSearchMessage(`Find a combatant!`)
-            }
-        });
-    };
+        let url = proxyURL + baseURL;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setResults(data.results))
+        .catch(err => console.log(err));
+        console.log(setResults);
+    }
+
+    
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -55,16 +51,8 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                        {fighters.length === 0 ? (
-                            <div id='searchResult' className='ml-auto mr-auto'>
-                                <Jumbotron>
-                                    <h3 className='jumboMessage'>{searchMessage}</h3> 
-                                </Jumbotron>
-                            </div>
-                        ) : (
-                            fighters.slice(0,3).map((fighter) =>
-                            <FighterCard/>)
-                        )}
+                            {results.slice(0,3).map((results) =>
+                            <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)}
                     </Row>
                 </Container>
             </div>
