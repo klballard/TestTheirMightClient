@@ -4,17 +4,23 @@ import {List, ListItem} from '@material-ui/core';
 const FighterCard = (props) => {
 
     const [results, setResults] = useState(props.results);
-    const saveFighter = (e) => {
+    const saveFighter = () => {
         results.map((results) => {
-            e.preventDefault();
+            //e.preventDefault();
             fetch('https://testtheirmightheroku.herokuapp.com/fighter/save', {
+
                 method:'POST',
-                body: JSON.stringify({fighter: {fighterName: results.name, intelligence: results.powerstats.intelligence, strength: results.powerstats.strength, speed : results.powerstats.speed, durability: results.powerstats.durability, power: results.powerstats.power, combat: results.powerstats.combat, image: results.image.url}}),
+                body: JSON.stringify({fighterName: results.name, intelligence: results.powerstats.intelligence, strength: results.powerstats.strength, speed : results.powerstats.speed, durability: results.powerstats.durability, power: results.powerstats.power, combat: results.powerstats.combat, image: results.image.url}),
                 headers: new Headers({
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain',
                     'Authorization': localStorage.token
                 })
             }).then((res) => res.json())
+            .then((fighter) => {
+                console.log(fighter);
+            })
+            
+            
             
         })
     }
@@ -37,6 +43,7 @@ const FighterCard = (props) => {
                                 <ListItem>Power: {props.results.powerstats.power}</ListItem>
                                 <ListItem>Combat: {props.results.powerstats.combat}</ListItem>
                             </List>
+                            <Button className='mt-2' onClick={saveFighter}>Save Fighter</Button>
                         </CardBody>
                     </Card>
                 </CardGroup>

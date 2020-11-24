@@ -7,7 +7,7 @@ import FighterCard from './FighterCard';
 const FighterSearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [results, setResults] = useState([]);
-    const [searchMessage, setSearchMessage] = useState(`Find a combatant!`);
+   
     let proxyURL ="https://cors-anywhere.herokuapp.com/";
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
@@ -51,7 +51,7 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                            {results.slice(0,3).map((results) =>
+                            {results.slice(0,5).map((results) =>
                             <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)}
                     </Row>
                 </Container>
