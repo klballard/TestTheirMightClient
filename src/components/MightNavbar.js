@@ -6,6 +6,7 @@ import {Button,Collapse,Navbar,NavbarBrand,NavbarToggler,NavItem,Nav,NavLink,Nav
 import Homepage from './Homepage';
 import Auth from '../auth/Auth';
 import FighterSearch from './FighterSearch';
+import SavedFighters from './SavedFighters';
 
 
 const MightNavbar = () => {
@@ -60,7 +61,7 @@ const MightNavbar = () => {
                 <Route exact path='/search'><FighterSearch/></Route>
                 <Route exact path='/1v1'></Route>
                 <Route exact path='/5v5'></Route>
-                <Route exact path='/savedfighters'></Route>
+                <Route exact path='/savedfighters'><SavedFighters/></Route>
                 <Route exact path='/savedteams'></Route>
                 <Route path='*' component={Homepage}/>
             </Switch>
