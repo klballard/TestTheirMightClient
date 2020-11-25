@@ -8,16 +8,17 @@ const FighterSearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [results, setResults] = useState([]);
    
-    let proxyURL ="https://cors-anywhere.herokuapp.com/";
+    //let proxyURL ="https://cors-anywhere.herokuapp.com/";
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
     const getData = () => {
-        let url = proxyURL + baseURL;
+        let url = baseURL;
         fetch(url)
         .then(res => res.json())
         .then(data => setResults(data.results))
         .catch(err => console.log(err));
         console.log(setResults);
+        console.log(results);
     }
 
     
@@ -51,8 +52,11 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                            {results.slice(0,5).map((results) =>
+                            {results.slice(0,1).map((results) =>
                             <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)}
+                    </Row>
+                    <Row>
+                        
                     </Row>
                 </Container>
             </div>

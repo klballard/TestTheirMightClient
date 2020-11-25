@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
 import {Button, Card, CardBody, CardImg, CardGroup, CardSubtitle, CardText, CardTitle, Col, Modal, ModalBody, ModalHeader} from 'reactstrap';
 import {List, ListItem} from '@material-ui/core';
-const FighterCard = (props) => {
 
-    const [results, setResults] = useState(props.results);
+
+const FighterCard = (props) => {
+    console.log(props.results);
+    console.log(props.results.name);
+    console.log(props.results.powerstats);
+    console.log(props.results.powerstats.intelligence);
+    console.log(props.image);
+    
+
+    //const [results, setResults] = useState(props.results);
     const saveFighter = () => {
-        results.map((results) => {
+        //let result = Array.from(props.results);
+        //props.results.map(() => {
             //e.preventDefault();
             fetch('https://testtheirmightheroku.herokuapp.com/fighter/save', {
 
                 method:'POST',
-                body: JSON.stringify({fighterName: results.name, intelligence: results.powerstats.intelligence, strength: results.powerstats.strength, speed : results.powerstats.speed, durability: results.powerstats.durability, power: results.powerstats.power, combat: results.powerstats.combat, image: results.image.url}),
+                body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.results.image.url}),
                 headers: new Headers({
-                    'Content-Type': 'text/plain',
-                    'Authorization': localStorage.token
+                    'Content-Type': 'application/json',
+                    'Authorization': localStorage.token,
                 })
             }).then((res) => res.json())
             .then((fighter) => {
@@ -22,7 +31,7 @@ const FighterCard = (props) => {
             
             
             
-        })
+        /*}*///)
     }
     return(
         <div>
