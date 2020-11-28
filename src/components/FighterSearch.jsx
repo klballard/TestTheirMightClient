@@ -52,7 +52,7 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                            {results.slice(0,1).map((results) =>
+                            {results.slice(0,5).map((results) =>
                             <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)}
                     </Row>
                     <Row>
