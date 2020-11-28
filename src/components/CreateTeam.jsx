@@ -114,7 +114,20 @@ const CreateTeam = () => {
     const SaveTeam = () => {
         fetch('https://testtheirmightheroku.herokuapp.com/team/saveteam', {
             method:'POST',
-            body: JSON.stringify({teamName: {teamName}, })
+            body: JSON.stringify({userId: 1, teamName: {setTeamName}, teamId: 1,
+                fighterOne: fighterOne.fighterName, fighterOnePL: sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat]), fighterOneImg: fighterOne.image,
+                fighterTwo: fighterTwo.fighterName, fighterTwoPL: sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat]), fighterTwoImg: fighterTwo.image,
+                fighterThree: fighterThree.fighterName, fighterThreePL: sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat]), fighterThreeImg: fighterThree.image,
+                fighterFour: fighterFour.fighterName, fighterFourPL: sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat]), fighterFourImg: fighterFour.image,
+                fighterFive: fighterFive.fighterName, fighterFivePL: sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat]), fighterFiveImg: fighterFive.image
+        }),
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.token
+            })
+        }).then((res) => res.json())
+        .then((team) => {
+            console.log(team);
         })
     }
     
@@ -218,8 +231,17 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                 </Row>
+                <br/>
+                <br/>
+                
+            </div>
+            <div style={{marginLeft:'45%'}}>
+                <Row>
+                    <Button onClick={SaveTeam}>Save your team!</Button>
+                </Row>
             </div>
         </div>
+        
     )
 }
 
