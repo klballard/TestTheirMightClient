@@ -2,12 +2,13 @@ import React, {useState} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {makeStyles} from '@material-ui/core';
 import {Route,Switch} from 'react-router-dom';
-import {Button,Collapse,Navbar,NavbarBrand,NavbarToggler,NavItem,Nav,NavLink,NavbarText} from 'reactstrap';
+import {Button,Collapse,Navbar,NavbarBrand,NavbarToggler,NavItem,Nav,NavLink,DropdownToggle,UncontrolledDropdown,DropdownMenu,DropdownItem} from 'reactstrap';
 import Homepage from './Homepage';
 import Auth from '../auth/Auth';
 import FighterSearch from './FighterSearch';
 import SavedFighters from './SavedFighters';
 import SingleFight from './SingleFight';
+import CreateTeam from './CreateTeam';
 
 
 const MightNavbar = () => {
@@ -34,19 +35,26 @@ const MightNavbar = () => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='mr-auto' navbar>
                         <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink href='/search'>Search</NavLink>: null}
+                            {localStorage.getItem('token') !== null ? <NavLink style={{paddingLeft:'50em'}} href='/search'>Search</NavLink>: null}
                         </NavItem>
                         <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink href='/1v1'>1 v 1</NavLink>: null}
+                            {localStorage.getItem('token') !== null ? <UncontrolledDropdown nav inNavbar>
+                                                                      <DropdownToggle nav caret>Fight</DropdownToggle>
+                                                                      <DropdownMenu right>
+                                                                      <DropdownItem href='1v1'>1 v 1</DropdownItem>
+                                                                      <DropdownItem href='5v5'>5 v 5</DropdownItem>
+                                                                      </DropdownMenu>
+                                                                      </UncontrolledDropdown>: null}
                         </NavItem>
                         <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink href='/5v5'>5 v 5</NavLink>: null}
-                        </NavItem>
-                        <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink href='/savedfighters'>Saved Fighters</NavLink>: null}
-                        </NavItem>
-                        <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink href='/savedteams'>Saved Teams</NavLink>: null}
+                            {localStorage.getItem('token') !== null ? <UncontrolledDropdown nav inNavbar>
+                                                                      <DropdownToggle nav caret>Roster</DropdownToggle>
+                                                                      <DropdownMenu right>
+                                                                      <DropdownItem href='/savedfighters'>Saved Fighters</DropdownItem>
+                                                                      <DropdownItem href='/createteam'>Create a Team</DropdownItem>
+                                                                      <DropdownItem href='/savedteams'>Saved Teams</DropdownItem>
+                                                                      </DropdownMenu>
+                                                                      </UncontrolledDropdown>: null}
                         </NavItem>
                         <NavItem>
                             <Auth updateToken={updateToken}/>
@@ -62,6 +70,7 @@ const MightNavbar = () => {
                 <Route exact path='/search'><FighterSearch/></Route>
                 <Route exact path='/1v1'><SingleFight/></Route>
                 <Route exact path='/5v5'></Route>
+                <Route exact path='/createteam'><CreateTeam/></Route>
                 <Route exact path='/savedfighters'><SavedFighters/></Route>
                 <Route exact path='/savedteams'></Route>
                 <Route path='*' component={Homepage}/>

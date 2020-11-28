@@ -39,7 +39,7 @@ const FighterSearch = () => {
                     <h3 className='search mb-3 p-1'>Search for a fighter!</h3>
                     <Form className='form' onSubmit={onSubmit}>
                         <InputGroup size='lg'>
-                            <Input className='input col-6' type='text' onChange={onChange} value={searchQuery} placeholder='By name (ex: Batman, Terminator)'/>
+                            <Input className='input col-6' type='text' onChange={onChange} value={searchQuery} placeholder='By name (ex: Batman, Predator)'/>
                             <div className='input-group-append'>
                                 <Button className='btn' type='submit'>Search</Button>
                             </div>

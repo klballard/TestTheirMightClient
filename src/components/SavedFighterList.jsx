@@ -17,7 +17,7 @@ const FighterList = (props) => {
         return props.fighters.map((fighter, index) => {
             return(
                 <tr key={index}>
-                    <th scope='row'><img src={fighter.image} width='20' height='20'></img>   {fighter.fighterName}</th>
+                    <th scope='row'><img alt='fighterthumbnail' src={fighter.image} width='20' height='20'></img>   {fighter.fighterName}</th>
                     <td>{fighter.intelligence}</td>
                     <td>{fighter.strength}</td>
                     <td>{fighter.speed}</td>
@@ -25,7 +25,7 @@ const FighterList = (props) => {
                     <td>{fighter.power}</td>
                     <td>{fighter.combat}</td>
                     <td><b>{sum([fighter.intelligence, fighter.strength, fighter.speed, fighter.durability, fighter.power, fighter.combat])}</b></td>
-                    <td><Button className='listButton m-1' onClick={() => {deleteFighter(fighter)}}/></td>
+                    <td><Button className='listButton m-1' color='danger' onClick={() => {deleteFighter(fighter)}}>X</Button></td>
                 </tr>
             )
         })

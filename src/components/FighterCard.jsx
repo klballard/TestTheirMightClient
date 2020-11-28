@@ -52,7 +52,7 @@ const FighterCard = (props) => {
                                 <ListItem>Power: {props.results.powerstats.power}</ListItem>
                                 <ListItem>Combat: {props.results.powerstats.combat}</ListItem>
                             </List>
-                            <Button className='mt-2' onClick={saveFighter}>Save Fighter</Button>
+                            <Button className='mt-2' onClick={saveFighter}>Add Fighter to Roster</Button>
                         </CardBody>
                     </Card>
                 </CardGroup>
