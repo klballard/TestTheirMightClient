@@ -10,6 +10,7 @@ import SavedFighters from './SavedFighters';
 import SingleFight from './SingleFight';
 import CreateTeam from './CreateTeam';
 import SavedTeams from './SavedTeams';
+import TeamFight from './TeamFight';
 
 
 const MightNavbar = () => {
@@ -70,7 +71,7 @@ const MightNavbar = () => {
                 <Route exact path='/home'><Homepage/></Route>
                 <Route exact path='/search'><FighterSearch/></Route>
                 <Route exact path='/1v1'><SingleFight/></Route>
-                <Route exact path='/5v5'></Route>
+                <Route exact path='/5v5'><TeamFight/></Route>
                 <Route exact path='/createteam'><CreateTeam/></Route>
                 <Route exact path='/savedfighters'><SavedFighters/></Route>
                 <Route exact path='/savedteams'><SavedTeams/></Route>

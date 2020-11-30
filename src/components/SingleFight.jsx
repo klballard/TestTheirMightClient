@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
 
-const SingleFight = (props) => {
+const SingleFight = () => {
 
     const [fighterOne, setFighterOne] = useState([]);
     const [fighterTwo, setFighterTwo] = useState([]);

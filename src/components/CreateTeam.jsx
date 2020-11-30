@@ -114,7 +114,7 @@ const CreateTeam = () => {
     const SaveTeam = () => {
         fetch('https://testtheirmightheroku.herokuapp.com/team/saveteam', {
             method:'POST',
-            body: JSON.stringify({userId: 4, teamName: teamName,
+            body: JSON.stringify({teamName: teamName,
                 fighterOne: fighterOne.fighterName, fighterOnePL: sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat]), fighterOneImg: fighterOne.image,
                 fighterTwo: fighterTwo.fighterName, fighterTwoPL: sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat]), fighterTwoImg: fighterTwo.image,
                 fighterThree: fighterThree.fighterName, fighterThreePL: sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat]), fighterThreeImg: fighterThree.image,
