@@ -114,7 +114,7 @@ const CreateTeam = () => {
     const SaveTeam = () => {
         fetch('https://testtheirmightheroku.herokuapp.com/team/saveteam', {
             method:'POST',
-            body: JSON.stringify({userId: 1, teamName: {setTeamName}, teamId: 1,
+            body: JSON.stringify({userId: 4, teamName: teamName,
                 fighterOne: fighterOne.fighterName, fighterOnePL: sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat]), fighterOneImg: fighterOne.image,
                 fighterTwo: fighterTwo.fighterName, fighterTwoPL: sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat]), fighterTwoImg: fighterTwo.image,
                 fighterThree: fighterThree.fighterName, fighterThreePL: sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat]), fighterThreeImg: fighterThree.image,
@@ -133,7 +133,7 @@ const CreateTeam = () => {
     
     return(
         <div>
-            <div style={{ marginTop:'120px', textAlign:'center'}}><h4>Form your teams from saved fighters for bigger battles!</h4>
+            <div style={{ marginTop:'100px', textAlign:'center'}}><h4>Form your teams from saved fighters for bigger battles!</h4>
                 <br/>
                 <br/>
                 <Form>
@@ -142,12 +142,15 @@ const CreateTeam = () => {
                         <Input style={{width: '300px', marginLeft:'auto', marginRight:'auto'}} name='teamName' value={teamName} onChange={(e) => setTeamName(e.target.value)}/>
                     </FormGroup>
                 </Form>
+                    <h5>Team power: {sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat, fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat, fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat, fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat, fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</h5>
             </div>
             <div>
+            <Card>
                 <Row>
+                    
                     <Col>
-                        <Card style={{marginTop:'50px', width:'150px', height:'auto'}}>
-                            <CardTitle>Rating: {sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat])}</CardTitle>
+                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
+                            <CardTitle>Power level: {sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat])}</CardTitle>
                             <Col>
                                 <table key={fighterOne.id}>
                                 <tr><img alt='1' src={fighterOne.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -163,8 +166,8 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'50px', width:'150px', height:'auto'}}>
-                        <CardTitle>Rating: {sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat])}</CardTitle>
+                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
+                        <CardTitle>Power level: {sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat])}</CardTitle>
                             <Col>
                                 <table key={fighterTwo.id}>
                                     <tr><img alt='2' src={fighterTwo.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -180,8 +183,8 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'50px', width:'150px', height:'auto'}}>
-                        <CardTitle>Rating: {sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat])}</CardTitle>
+                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
+                        <CardTitle>Power level: {sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat])}</CardTitle>
                             <Col>
                                 <table key={fighterThree.id}>
                                     <tr><img alt='3' src={fighterThree.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -197,8 +200,8 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'50px', width:'150px', height:'auto'}}>
-                        <CardTitle>Rating: {sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat])}</CardTitle>
+                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
+                        <CardTitle>Power level: {sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat])}</CardTitle>
                             <Col>
                                 <table key={fighterFour.id}>
                                     <tr><img alt='4' src={fighterFour.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -214,8 +217,8 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'50px', width:'150px', height:'auto'}}>
-                        <CardTitle>Rating: {sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</CardTitle>
+                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
+                        <CardTitle>Power level: {sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</CardTitle>
                             <Col>
                                 <table key={fighterFive.id}>
                                     <tr><img alt='5' src={fighterFive.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -231,11 +234,13 @@ const CreateTeam = () => {
                         </Card>
                     </Col>
                 </Row>
+                </Card>
                 <br/>
                 <br/>
                 
             </div>
-            <div style={{marginLeft:'45%'}}>
+            <div style={{textAlign: 'center', marginLeft:'45%'}}>
+                
                 <Row>
                     <Button onClick={SaveTeam}>Save your team!</Button>
                 </Row>
