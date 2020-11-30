@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {Card, Col, Row, Button, CardTitle, Form, FormGroup, Label, Input} from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const CreateTeam = () => {
     const [fighters, setFighters] = useState([]);
@@ -16,7 +18,7 @@ const CreateTeam = () => {
     const [selectFive, setSelectFive] = useState([]);
 
     const fetchFighterOne = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectOne}`, {
+        fetch(`${APIURL}/fighter/${selectOne}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -29,7 +31,7 @@ const CreateTeam = () => {
     }
 
     const fetchFighterTwo = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectTwo}`, {
+        fetch(`${APIURL}/fighter/${selectTwo}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -42,7 +44,7 @@ const CreateTeam = () => {
     }
 
     const fetchFighterThree = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectThree}`, {
+        fetch(`${APIURL}/fighter/${selectThree}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -55,7 +57,7 @@ const CreateTeam = () => {
     }
 
     const fetchFighterFour = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectFour}`, {
+        fetch(`${APIURL}/fighter/${selectFour}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -68,7 +70,7 @@ const CreateTeam = () => {
     }
 
     const fetchFighterFive = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectFive}`, {
+        fetch(`${APIURL}/fighter/${selectFive}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -81,7 +83,7 @@ const CreateTeam = () => {
     }
 
     const fetchFighters = () => {
-        fetch('https://testtheirmightheroku.herokuapp.com/fighter/getall', {
+        fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -112,7 +114,7 @@ const CreateTeam = () => {
     }
 
     const SaveTeam = () => {
-        fetch('https://testtheirmightheroku.herokuapp.com/team/saveteam', {
+        fetch(`${APIURL}/team/saveteam`, {
             method:'POST',
             body: JSON.stringify({teamName: teamName,
                 fighterOne: fighterOne.fighterName, fighterOnePL: sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat]), fighterOneImg: fighterOne.image,

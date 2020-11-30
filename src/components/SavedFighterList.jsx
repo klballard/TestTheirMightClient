@@ -1,10 +1,12 @@
 import React from 'react';
 import {Button,Table} from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const FighterList = (props) => {
 
     const deleteFighter = (fighter) => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${fighter.id}`, {
+        fetch(`${APIURL}/fighter/${fighter.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',

@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalHeader} from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const EditTeam = (props) => {
     const [editName, setEditName] = useState(props.teamToEdit.teamName);
@@ -11,7 +13,7 @@ const EditTeam = (props) => {
     
     const teamNameUpdate = (event) => {
         event.preventDefault();
-        fetch(`https://testtheirmightheroku.herokuapp.com/team/${props.teamToEdit.id}`, {
+        fetch(`${APIURL}/team/${props.teamToEdit.id}`, {
             method:'PUT',
             body: JSON.stringify({userId: 4, teamName: editName}),
             headers: new Headers({

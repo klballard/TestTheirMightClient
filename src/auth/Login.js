@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} from 'reactstrap';
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
+import APIURL from '../helpers/environment';
 
 
 const LoginPlayer = (props) => {
@@ -14,7 +15,7 @@ const LoginPlayer = (props) => {
 
     let handleSubmit = (e) => {
         e.preventDefault();
-        fetch('https://testtheirmightheroku.herokuapp.com/user/login', {
+        fetch(`${APIURL}/user/login`, {
             method:'POST',
             body: JSON.stringify({user:{email:email, password:password}}),
             headers: new Headers({

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {Card,Col,Row} from 'reactstrap';
 import TeamList from './SavedTeamList';
 import EditTeam from './EditTeam';
+import APIURL from '../helpers/environment';
+
 
 const SavedTeams = (props) => {
     const [teams, setTeams] = useState([]);
@@ -9,7 +11,7 @@ const SavedTeams = (props) => {
     const [teamToEdit, setTeamToEdit] = useState({});
 
     const fetchTeams = (props) => {
-        fetch('https://testtheirmightheroku.herokuapp.com/team/getall', {
+        fetch(`${APIURL}/team/getall`, {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

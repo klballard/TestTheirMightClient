@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const SingleFight = () => {
 
@@ -10,7 +11,7 @@ const SingleFight = () => {
     const [secondValue, setSecondValue] = useState([]);
 
     const fetchFighterOne = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${selectValue}`, {
+        fetch(`${APIURL}/fighter/${selectValue}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

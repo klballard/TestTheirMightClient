@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Row, Col} from 'reactstrap';
 import FighterList from './SavedFighterList';
+import APIURL from '../helpers/environment';
+
 
 
 const SavedFighters = (props) => {
@@ -8,7 +10,7 @@ const SavedFighters = (props) => {
     const [fighters, setFighters] = useState([]);
 
     const fetchFighters = () => {
-        fetch('https://testtheirmightheroku.herokuapp.com/fighter/getall', {
+        fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

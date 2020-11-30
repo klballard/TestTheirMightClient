@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
+import APIURL from '../helpers/environment';
 
 const TeamFight = () => {
     const [teams, setTeams] = useState([]);
@@ -9,7 +10,7 @@ const TeamFight = () => {
     const [secondSelect, setSecondSelect] = useState([]);
 
     const fetchTeamOne = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/team/${firstSelect}`, {
+        fetch(`${APIURL}/team/${firstSelect}`, {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -22,7 +23,7 @@ const TeamFight = () => {
     }
 
     const fetchTeamTwo = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/team/${secondSelect}`, {
+        fetch(`${APIURL}/team/${secondSelect}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -35,7 +36,7 @@ const TeamFight = () => {
     }
 
     const fetchTeams = () => {
-        fetch('https://testtheirmightheroku.herokuapp.com/team/getall', {
+        fetch(`${APIURL}/team/getall`, {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
