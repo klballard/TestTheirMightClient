@@ -17,7 +17,6 @@ const TeamFight = () => {
             })
         }).then((res) => res.json())
         .then((listData) => {
-            console.log(listData);
             setTeamOne(listData);
         })
     }
