@@ -14,10 +14,12 @@ const AdminPage = () => {
                 'Content-Type':'application/json',
                 'Authorization':localStorage.token
             })
-        }).then((res) => res.json())
-        .then((listData) => {
+        })//.then((res) => res.json())
+        .then(res => res.text())
+        /*.then((listData) => {
             setUsers(listData);
-        })
+        })*/
+        .then(text => console.log(text))
     }
 
     useEffect(() => {

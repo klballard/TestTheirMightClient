@@ -15,7 +15,7 @@ const UserList = (props) => {
     }
 
     const userMap = () => {
-        return props.users.map((user, id) => {
+        return props.users.map((user) => {
             return(
                 <tr key={user.id}>
                     <th scope='row'>{user.email}</th>
