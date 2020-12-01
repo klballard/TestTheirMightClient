@@ -18,7 +18,7 @@ const TeamFight = () => {
                 "Content-Type": "application/json",
                 "Authorization": localStorage.token
             })
-        }).then((res) => JSON.stringify(res))
+        }).then((res) => res.json())
         .then((listData) => {
             setTeamOne(listData);
         })
