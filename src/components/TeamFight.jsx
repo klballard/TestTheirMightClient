@@ -13,7 +13,7 @@ const TeamFight = () => {
         fetch(`${APIURL}/team/${firstSelect}`, {
             method:'GET',
             headers: new Headers({
-                'Content-Type': 'application/json',
+                'Content-Type': 'text/html',
                 'Authorization': localStorage.token
             })
         }).then((res) => res.json())
