@@ -4,10 +4,6 @@ import React, {useState,useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {BrowserRouter as Router} from 'react-router-dom';
 import MightNavbar from './components/MightNavbar';
-import {Admin, Resource, ListGuesser} from 'react-admin';
-import APIURL from './helpers/environment';
-
-const dataProvider = APIURL;
 
 /*
 let useStyles = makeStyles((theme) => ({
@@ -32,9 +28,6 @@ function App() {
         
       <Router>
         <MightNavbar/>
-        <Admin dataProvider={dataProvider}>
-            <Resource name='users' list={ListGuesser}/>
-        </Admin>
       </Router>
       
     </div>
