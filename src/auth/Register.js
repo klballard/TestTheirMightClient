@@ -11,6 +11,7 @@ function RegisterPlayer(props){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+
     let handleSubmit = (e) => {
         e.preventDefault();
         fetch(`${APIURL}/user/register`, {

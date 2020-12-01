@@ -11,6 +11,7 @@ import SingleFight from './SingleFight';
 import CreateTeam from './CreateTeam';
 import SavedTeams from './SavedTeams';
 import TeamFight from './TeamFight';
+import AdminPage from './AdminPage';
 
 
 const MightNavbar = () => {
@@ -59,6 +60,9 @@ const MightNavbar = () => {
                                                                       </UncontrolledDropdown>: null}
                         </NavItem>
                         <NavItem>
+                            {localStorage.getItem('token') !== null ? <NavLink style={{paddingLeft:'50em'}} href='/admin'>Admin</NavLink>: null}
+                        </NavItem>
+                        <NavItem>
                             <Auth updateToken={updateToken}/>
                         </NavItem>
                         <NavLink href='/home'>
@@ -75,6 +79,7 @@ const MightNavbar = () => {
                 <Route exact path='/createteam'><CreateTeam/></Route>
                 <Route exact path='/savedfighters'><SavedFighters/></Route>
                 <Route exact path='/savedteams'><SavedTeams/></Route>
+                <Route exact path='/admin'><AdminPage/></Route>
                 <Route path='*' component={Homepage}/>
             </Switch>
         </div>

@@ -18,6 +18,10 @@ let useStyles = makeStyles((theme) => ({
 
 function App() {
 //  const classes = useStyles();
+  const updateToken = (newToken) => {
+    localStorage.setItem("token", newToken);
+    setSessionToken(newToken);
+  };
   
   useEffect(() => {
     document.title = "TEST THEIR MIGHT"

@@ -10,6 +10,7 @@ const LoginPlayer = (props) => {
    // const classes = useStyles();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [sessionToken, setSessionToken] = useState('');
     const [loginModal, setLoginModal] = useState(false);
     const toggle = () => setLoginModal(!loginModal);
 
@@ -25,8 +26,8 @@ const LoginPlayer = (props) => {
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken)
-        })
-    }
+        }).then(alert('Welcome back.'))
+    };
 
     return(
         <div>
