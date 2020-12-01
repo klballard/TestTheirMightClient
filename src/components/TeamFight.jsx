@@ -14,9 +14,9 @@ const TeamFight = () => {
             method:'GET',
             //body: JSON.stringify(),
             headers: new Headers({
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": localStorage.token
             })
         }).then((res) => res.json())
         .then((listData) => {
