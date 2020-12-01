@@ -12,6 +12,7 @@ import CreateTeam from './CreateTeam';
 import SavedTeams from './SavedTeams';
 import TeamFight from './TeamFight';
 import AdminPage from './AdminPage';
+import {Admin, Resource, ListGuesser} from 'react-admin';
 
 
 const MightNavbar = () => {
@@ -79,7 +80,7 @@ const MightNavbar = () => {
                 <Route exact path='/createteam'><CreateTeam/></Route>
                 <Route exact path='/savedfighters'><SavedFighters/></Route>
                 <Route exact path='/savedteams'><SavedTeams/></Route>
-                <Route exact path='/admin'><AdminPage/></Route>
+                {/*<Route exact path='/admin'><AdminPage><Resource name="users" list={ListGuesser}/></AdminPage></Route>*/}
                 <Route path='*' component={Homepage}/>
             </Switch>
         </div>
