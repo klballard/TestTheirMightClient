@@ -28,13 +28,15 @@ function App() {
 
   return (
     <div className='{classes.root}'>
-      <Admin dataProvider={dataProvider}>
-            <Resource name='users' list={ListGuesser}/>
+      
         
       <Router>
         <MightNavbar/>
+        <Admin dataProvider={dataProvider}>
+            <Resource name='users' list={ListGuesser}/>
+        </Admin>
       </Router>
-      </Admin>
+      
     </div>
   );
 }
