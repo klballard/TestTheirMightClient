@@ -1,27 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalHeader} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
+const EditFighter = (props) => {
+    const [editName, setEditName] = useState(props.fighterToEdit.fighterName);
 
-const EditTeam = (props) => {
-    const [editName, setEditName] = useState(props.teamToEdit.teamName);
-    /*const [editFighterOne, setEditFighterOne] = useState(props.teamToEdit.fighterOne);
-    const [editFighterTwo, setEditFighterTwo] = useState(props.teamToEdit.fighterTwo);
-    const [editFighterThree, setEditFighterThree] = useState(props.teamToEdit.fighterThree);
-    const [editFighterFour, setEditFighterFour] = useState(props.teamToEdit.fighterFour);
-    const [editFighterFive, setEditFighterFive] = useState(props.teamToEdit.fighterFive);*/
-    
-    const teamNameUpdate = (event) => {
+    const fighterNameUpdate = (event) => {
         event.preventDefault();
-        fetch(`${APIURL}/team/${props.teamToEdit.id}`, {
+        fetch(`${APIURL}/fighter/${props.fighterToEdit.id}`, {
             method:'PUT',
-            body: JSON.stringify({teamName: editName}),
+            body: JSON.stringify({fighterName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',
                 'Authorization': localStorage.token
             })
         }).then((res) => {
-            props.fetchTeams();
+            props.fetchFighters();
             props.updateOff();
         })
     }
@@ -29,9 +23,9 @@ const EditTeam = (props) => {
     return(
         <div>
             <Modal isOpen={true}>
-                <ModalHeader>Edit Team</ModalHeader>
+                <ModalHeader>Edit Fighter</ModalHeader>
                 <ModalBody>
-                    <Form onSubmit={teamNameUpdate}>
+                    <Form onSubmit={fighterNameUpdate}>
                         <FormGroup>
                             <Label htmlFor='name'>Edit name</Label>
                             <Input name='name' value={editName} onChange={(e) => setEditName(e.target.value)}/>
@@ -48,4 +42,4 @@ const EditTeam = (props) => {
 
 
 
-export default EditTeam;
+export default EditFighter;

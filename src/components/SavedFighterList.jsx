@@ -27,6 +27,7 @@ const FighterList = (props) => {
                     <td>{fighter.power}</td>
                     <td>{fighter.combat}</td>
                     <td><b>{sum([fighter.intelligence, fighter.strength, fighter.speed, fighter.durability, fighter.power, fighter.combat])}</b></td>
+                    <td><Button color='warning' onClick={() => {props.fighterEditUpdate(fighter); props.updateOn()}}></Button></td>
                     <td><Button className='listButton m-1' color='danger' onClick={() => {deleteFighter(fighter)}}>X</Button></td>
                 </tr>
             )
@@ -64,6 +65,7 @@ const FighterList = (props) => {
                     <th>Power: </th>
                     <th>Combat: </th>
                     <th>Total: </th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
