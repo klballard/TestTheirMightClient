@@ -16,7 +16,7 @@ const FighterSearch = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                setResults(data.hits);
+                setResults(data.results);
                 setSearchQuery('');
                 if(results.length === 0){
                     setSearchMessage('That fighter will be future DLC. Try again!')
