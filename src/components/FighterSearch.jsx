@@ -14,19 +14,20 @@ const FighterSearch = () => {
     const getData = () => {
         fetch(baseURL)
             .then((res) => res.json())
+            /*
             .then((data) => {
                 console.log(data);
                 setResults(data.results);
                 setSearchQuery('');
-                if(results.length === 0){
+                if(data.response === 'error'){
                     setSearchMessage('That fighter will be future DLC. Try again!')
                 } else {
                     setSearchMessage('')
                 }
-            });
+            });*/
 
 
-        /*
+        
         .then(data => setResults(data.results))
         .catch(err => console.log(err));
         console.log(setResults);
@@ -36,7 +37,7 @@ const FighterSearch = () => {
             setSearchMessage('That fighter will be future DLC. Try again!')
         } else {
             setSearchMessage('')
-        }*/
+        }
     };
 
     
