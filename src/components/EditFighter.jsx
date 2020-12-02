@@ -12,7 +12,7 @@ const EditFighter = (props) => {
             body: JSON.stringify({fighterName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => {
             props.fetchFighters();

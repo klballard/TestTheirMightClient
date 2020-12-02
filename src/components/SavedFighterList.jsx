@@ -10,7 +10,7 @@ const FighterList = (props) => {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then(() => props.fetchFighters())
     }

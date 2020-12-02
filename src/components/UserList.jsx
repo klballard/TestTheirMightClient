@@ -3,16 +3,16 @@ import {Button,Table} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
 const UserList = (props) => {
-
+    /*
     const deleteUser = (user) => {
         fetch(`${APIURL}/user/${user.id}`, {
             method:'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then(() => props.fetchUsers())
-    }
+    }*/
 
     const userMap = () => {
         return props.users.map((user) => {

@@ -4,7 +4,7 @@ import APIURL from '../helpers/environment';
 import UserList from './UserList';
 
 
-const AdminPage = () => {
+const AdminPage = (props) => {
     const [users, setUsers] = useState([]);
 
     const fetchUsers = () => {
@@ -12,7 +12,7 @@ const AdminPage = () => {
             method:'GET',
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization':localStorage.token
+                'Authorization':props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {

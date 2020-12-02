@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
-const SingleFight = () => {
+const SingleFight = (props) => {
 
     const [fighterOne, setFighterOne] = useState([]);
     const [fighterTwo, setFighterTwo] = useState([]);
@@ -15,7 +15,7 @@ const SingleFight = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -28,7 +28,7 @@ const SingleFight = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -41,7 +41,7 @@ const SingleFight = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {

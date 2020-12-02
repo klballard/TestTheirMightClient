@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/core';
 import FighterCard from './FighterCard';
 
 
-const FighterSearch = () => {
+const FighterSearch = (props) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [results, setResults] = useState([]);
     const [searchMessage, setSearchMessage] = useState('')

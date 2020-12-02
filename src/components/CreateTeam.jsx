@@ -3,7 +3,7 @@ import {Card, Col, Row, Button, CardTitle, Form, FormGroup, Label, Input} from '
 import APIURL from '../helpers/environment';
 
 
-const CreateTeam = () => {
+const CreateTeam = (props) => {
     const [fighters, setFighters] = useState([]);
     const [teamName, setTeamName] = useState('');
     const [fighterOne, setFighterOne] = useState([]);
@@ -22,7 +22,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -35,7 +35,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -48,7 +48,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -61,7 +61,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -74,7 +74,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -87,7 +87,7 @@ const CreateTeam = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {

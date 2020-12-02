@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
-const TeamFight = () => {
+const TeamFight = (props) => {
     const [teams, setTeams] = useState([]);
     const [teamOne, setTeamOne] = useState([]);
     const [teamTwo, setTeamTwo] = useState([]);
@@ -16,7 +16,7 @@ const TeamFight = () => {
             headers: new Headers({
                 //"Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": localStorage.token
+                "Authorization": props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -29,7 +29,7 @@ const TeamFight = () => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -42,7 +42,7 @@ const TeamFight = () => {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': props.sessionToken
             })
         }).then((res) => res.json())
         .then((listData) => {
