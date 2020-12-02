@@ -14,11 +14,11 @@ const TeamFight = () => {
             method:'GET',
             //body: JSON.stringify(),
             headers: new Headers({
-                "Accept": "application/json",
+                //"Accept": "application/json",
                 "Content-Type": "application/json",
                 "Authorization": localStorage.token
             })
-        }).then((res) => JSON.stringify(res))
+        }).then((res) => res.json())
         .then((listData) => {
             setTeamOne(listData);
         })
