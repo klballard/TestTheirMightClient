@@ -14,21 +14,22 @@ const FighterCard = (props) => {
     
 
     //const [results, setResults] = useState(props.results);
-    const saveFighter = (props) => {
-        //let result = Array.from(props.results);
+    const saveFighter = (e) => {
+        console.log('before')
         //props.results.map(() => {
-            //e.preventDefault();
+            e.preventDefault();
+            console.log('middle')
             fetch(`${APIURL}/fighter/save`, {
 
                 method:'POST',
-                body: JSON.stringify({fighter:{fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.results.image.url}}),
+                body: JSON.stringify({fighter:{fighterName: props.fighterName, intelligence: props.intelligence, strength: props.strength, speed: props.speed, durability: props.durability, power: props.power, combat: props.combat, image: props.image.url}}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
                     'Authorization': props.sessionToken,
                 })
             }).then((res) => res.json())
             .then((fighter) => {
-                console.log(fighter);
+                console.log(fighter, 'it worked');
             })
             
             
