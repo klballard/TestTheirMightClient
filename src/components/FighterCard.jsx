@@ -20,7 +20,6 @@ const FighterCard = (props) => {
             e.preventDefault();
             console.log('middle')
             fetch(`${APIURL}/fighter/save`, {
-
                 method:'POST',
                 body: JSON.stringify({fighter:{fighterName: props.fighterName, intelligence: props.intelligence, strength: props.strength, speed: props.speed, durability: props.durability, power: props.power, combat: props.combat, image: props.image.url}}),
                 headers: new Headers({
@@ -30,6 +29,8 @@ const FighterCard = (props) => {
             }).then((res) => res.json())
             .then((fighter) => {
                 console.log(fighter, 'it worked');
+            }).catch((err) => {
+                console.log(err);
             })
             
             
@@ -55,7 +56,7 @@ const FighterCard = (props) => {
                                 <ListItem>Power: {props.results.powerstats.power}</ListItem>
                                 <ListItem>Combat: {props.results.powerstats.combat}</ListItem>
                             </List>
-                            <Button className='mt-2' onClick={saveFighter}>Add Fighter to Roster</Button>
+                            <Button type='submit' className='mt-2' onSubmit={saveFighter}>Add Fighter to Roster</Button>
                         </CardBody>
                     </Card>
                 </CardGroup>
