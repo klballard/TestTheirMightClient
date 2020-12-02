@@ -18,7 +18,7 @@ const FighterSearch = () => {
                 console.log(data);
                 setResults(data.results);
                 setSearchQuery('');
-                if(results.length === 0){
+                if(results === 0){
                     setSearchMessage('That fighter will be future DLC. Try again!')
                 } else {
                     setSearchMessage('')
@@ -54,7 +54,7 @@ const FighterSearch = () => {
         <div style={{padding:'40px'}}>
             <div className='main ml-auto mr-auto mt-5 mb-5 p-2 col-8 bg-white rounded'>
                 <div className='mainDiv'>
-                    <h3 className='search mb-3 p-1'>Search for a fighter!</h3>
+                    <h3 className='search mb-3 p-1'><a href='https://superheroapi.com/ids.html'>Search</a> for a fighter!</h3>
                     <Form className='form' onSubmit={onSubmit}>
                         <InputGroup size='lg'>
                             <Input className='input col-6' type='text' onChange={onChange} value={searchQuery} placeholder='By name (ex: Batman, Predator)'/>
@@ -70,7 +70,7 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                        {results.length === 0 ? (
+                        {results === 0 ? (
                             <div id="searchResult" className="ml-auto mr-auto">
                                 <Jumbotron>
                                     <h3 className="jumbo">{searchMessage}</h3>
