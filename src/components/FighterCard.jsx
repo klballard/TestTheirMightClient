@@ -56,7 +56,7 @@ const FighterCard = (props) => {
                                 <ListItem>Power: {props.results.powerstats.power}</ListItem>
                                 <ListItem>Combat: {props.results.powerstats.combat}</ListItem>
                             </List>
-                            <Button type='submit' className='mt-2' onSubmit={saveFighter}>Add Fighter to Roster</Button>
+                            <Button className='mt-2' onClick={saveFighter}>Add Fighter to Roster</Button>
                         </CardBody>
                     </Card>
                 </CardGroup>
