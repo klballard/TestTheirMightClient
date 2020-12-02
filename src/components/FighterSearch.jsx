@@ -12,9 +12,21 @@ const FighterSearch = () => {
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
     const getData = () => {
-        let url = baseURL;
-        fetch(url)
-        .then(res => res.json())
+        fetch(baseURL)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setResults(data.results);
+                setSearchQuery('');
+                if(results.length === 0){
+                    setSearchMessage('That fighter will be future DLC. Try again!')
+                } else {
+                    setSearchMessage('')
+                }
+            });
+
+
+        /*
         .then(data => setResults(data.results))
         .catch(err => console.log(err));
         console.log(setResults);
@@ -24,8 +36,8 @@ const FighterSearch = () => {
             setSearchMessage('That fighter will be future DLC. Try again!')
         } else {
             setSearchMessage('')
-        }
-    }
+        }*/
+    };
 
     
 
