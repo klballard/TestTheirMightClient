@@ -14,7 +14,7 @@ const FighterCard = (props) => {
     
 
     //const [results, setResults] = useState(props.results);
-    const saveFighter = () => {
+    const saveFighter = (props) => {
         //let result = Array.from(props.results);
         //props.results.map(() => {
             //e.preventDefault();
@@ -24,7 +24,7 @@ const FighterCard = (props) => {
                 body: JSON.stringify({fighter:{fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.results.image.url}}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.token,
+                    'Authorization': props.sessionToken,
                 })
             }).then((res) => res.json())
             .then((fighter) => {
