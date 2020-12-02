@@ -16,9 +16,9 @@ const FighterSearch = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                setResults(data.results);
+                setResults(data.hits);
                 setSearchQuery('');
-                if(results === 0){
+                if(results.length === 0){
                     setSearchMessage('That fighter will be future DLC. Try again!')
                 } else {
                     setSearchMessage('')
@@ -70,7 +70,7 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                        {results === 0 ? (
+                        {results.length === 0 ? (
                             <div id="searchResult" className="ml-auto mr-auto">
                                 <Jumbotron>
                                     <h3 className="jumbo">{searchMessage}</h3>
