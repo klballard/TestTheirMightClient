@@ -7,7 +7,7 @@ import FighterCard from './FighterCard';
 const FighterSearch = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [results, setResults] = useState([]);
-   
+    const [searchMessage, setSearchMessage] = useState('')
     //let proxyURL ="https://cors-anywhere.herokuapp.com/";
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
@@ -19,6 +19,12 @@ const FighterSearch = () => {
         .catch(err => console.log(err));
         console.log(setResults);
         console.log(results);
+        setSearchQuery('');
+        if(results.length === 0){
+            setSearchMessage('That fighter will be future DLC. Try again!')
+        } else {
+            setSearchMessage('')
+        }
     }
 
     
@@ -52,11 +58,16 @@ const FighterSearch = () => {
             <div>
                 <Container>
                     <Row>
-                            {results.slice(0,5).map((results) =>
-                            <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)}
-                    </Row>
-                    <Row>
-                        
+                        {results.length === 0 ? (
+                            <div id="searchResult" className="ml-auto mr-auto">
+                                <Jumbotron>
+                                    <h3 className="jumbo">{searchMessage}</h3>
+                                </Jumbotron>
+                            </div>
+                        ) : (
+                            results.slice(0,6).map((results) =>
+                                <FighterCard results={results} fighterName={results.name} intelligence={results.powerstats.intelligence} strength={results.powerstats.strength} speed={results.powerstats.speed} durability={results.powerstats.durability} power={results.powerstats.power} combat={results.powerstats.combat} image={results.image.url}/>)
+                        )}
                     </Row>
                 </Container>
             </div>
