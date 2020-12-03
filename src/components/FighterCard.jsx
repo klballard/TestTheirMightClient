@@ -15,10 +15,8 @@ const FighterCard = (props) => {
 
     //const [results, setResults] = useState(props.results);
     const saveFighter = (e) => {
-        console.log('before')
         //props.results.map(() => {
             e.preventDefault();
-            console.log('middle')
             fetch(`${APIURL}/fighter/save`, {
                 method:'POST',
                 body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.image.url}),
