@@ -25,7 +25,8 @@ const LoginPlayer = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
-            props.updateToken(data.sessionToken)
+            props.updateToken(data.sessionToken);
+            props.updateUserRole(data.user.isAdmin.toString());
         }).then(alert('Welcome back.'))
     };
 

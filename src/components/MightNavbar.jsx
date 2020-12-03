@@ -20,6 +20,7 @@ const MightNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
  //   const classes = useStyles();
+    const [userRole, setUserRole] = useState('');
 
     const [sessionToken, setSessionToken] = useState('');
     const updateToken = (newToken) => {
@@ -27,6 +28,13 @@ const MightNavbar = () => {
         setSessionToken(newToken);
         console.log(sessionToken);
     };
+
+    const userRoles = (newRole) => {
+        localStorage.setItem('role', newRole);
+        setUserRole(newRole);
+        console.log(newRole);
+    }
+
     const logOut = () => {
         localStorage.clear('token');
         setSessionToken('');
@@ -64,8 +72,15 @@ const MightNavbar = () => {
                         <NavItem>
                             {localStorage.getItem('token') !== null ? <NavLink style={{}} href='/admin'>Admin</NavLink>: null}
                         </NavItem>
+                        {localStorage.getItem('role') == 'true' ? (
+                            <NavItem>
+                                {localStorage.getItem('token') !== null ? (
+                                    <NavLink style={{}} href='/admin'>Admin</NavLink>
+                                ) :null}
+                            </NavItem>
+                        ) :null}
                         <NavItem>
-                            <Auth updateToken={updateToken}/>
+                            <Auth updateToken={updateToken} updateUserRole={userRoles}/>
                         </NavItem>
                         <NavLink href='/home'>
                             {localStorage.getItem('token') !== null ? <Button style={{marginRight: 20}} onClick={logOut}>Log out</Button>: null}
