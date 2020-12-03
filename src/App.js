@@ -6,31 +6,28 @@ import {makeStyles} from '@material-ui/core/styles';
 import {BrowserRouter as Router} from 'react-router-dom';
 import MightNavbar from './components/MightNavbar';
 
-/*
+
 let useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
-    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/grocery8.jpg"})`,
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/backgroundexplosion.png"})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },
 }));
-*/
+
 
 function App() {
-  
+  const classes = useStyles();
   useEffect(() => {
     document.title = "TEST THEIR MIGHT"
   }, []);
 
   return (
-    <div className='{classes.root}'>
-      
-        
+    <div className={classes.root}>
       <Router>
         <MightNavbar/>
       </Router>
-      
     </div>
   );
 }

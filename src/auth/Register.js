@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {Modal, ModalHeader, ModalBody, Input, Label, Form, FormGroup} from 'reactstrap';
+import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} from 'reactstrap';
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
-import { Button, notification, Space } from 'antd';
 
 function RegisterPlayer(props){
     const {buttonLabel, className} = props;
@@ -26,16 +25,8 @@ function RegisterPlayer(props){
         ).then((data) => {
             props.updateToken(data.sessionToken);
             props.updateUserRole(data.user.isAdmin.toString());
-        })
+        }).then(alert('Your account has been created!'))
     };
-
-    const openNotificationWithIcon = type => {
-        notification[type]({
-          message: 'Success!',
-          description:
-            'Your account has been created!',
-        });
-      };
 
     return(
         <div>
@@ -53,9 +44,7 @@ function RegisterPlayer(props){
                             <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password}/>
                         </FormGroup>
                         <FormGroup>
-                            <Space>
-                            <Button type='submit' onClick={() => openNotificationWithIcon('success'), toggle}>Create account</Button>{' '}
-                            </Space>
+                            <Button type='submit' onClick={toggle}>Create account</Button>{' '}
                             <Button onClick={toggle}>Cancel</Button>
                         </FormGroup>
                     </Form>
