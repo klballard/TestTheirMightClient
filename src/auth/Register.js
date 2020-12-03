@@ -26,7 +26,7 @@ function RegisterPlayer(props){
         ).then((data) => {
             props.updateToken(data.sessionToken);
             props.updateUserRole(data.user.isAdmin.toString());
-        }).then(notification({message: 'Success!', description:'Your account has been created!'}))
+        })
     };
 
     const openNotificationWithIcon = type => {
@@ -54,7 +54,7 @@ function RegisterPlayer(props){
                         </FormGroup>
                         <FormGroup>
                             <Space>
-                            <Button type='submit' onClick={toggle, openNotificationWithIcon('success')}>Create account</Button>{' '}
+                            <Button type='submit' onClick={() => openNotificationWithIcon('success'), toggle}>Create account</Button>{' '}
                             </Space>
                             <Button onClick={toggle}>Cancel</Button>
                         </FormGroup>
