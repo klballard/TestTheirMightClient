@@ -24,7 +24,7 @@ const SingleFight = (props) => {
     }
 
     const fetchFighterTwo = () => {
-        fetch(`https://testtheirmightheroku.herokuapp.com/fighter/${secondValue}`, {
+        fetch(`${APIURL}/fighter/${secondValue}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const SingleFight = (props) => {
     }
 
     const fetchFighters = () => {
-        fetch('https://testtheirmightheroku.herokuapp.com/fighter/getall', {
+        fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
