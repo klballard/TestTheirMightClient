@@ -15,7 +15,7 @@ const SingleFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': localStorage.token
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -28,7 +28,7 @@ const SingleFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': localStorage.token
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -41,7 +41,7 @@ const SingleFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': localStorage.token
             })
         }).then((res) => res.json())
         .then((listData) => {

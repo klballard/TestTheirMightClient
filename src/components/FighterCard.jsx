@@ -22,10 +22,10 @@ const FighterCard = (props) => {
             fetch(`${APIURL}/fighter/save`, {
 
                 method:'POST',
-                body: JSON.stringify({fighter:{fighterName: props.fighterName, intelligence: props.intelligence, strength: props.strength, speed: props.speed, durability: props.durability, power: props.power, combat: props.combat, image: props.image.url}}),
+                body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.image.url}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': props.sessionToken,
+                    'Authorization': localStorage.token
                 })
             }).then((res) => res.json())
             .then((fighter) => {

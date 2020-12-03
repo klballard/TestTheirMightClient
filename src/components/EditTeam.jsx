@@ -18,7 +18,7 @@ const EditTeam = (props) => {
             body: JSON.stringify({teamName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': localStorage.token
             })
         }).then((res) => {
             props.fetchTeams();
