@@ -3,6 +3,7 @@ import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} fr
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
+import { notification, Space } from 'antd';
 
 function RegisterPlayer(props){
     const {buttonLabel, className} = props;
@@ -25,7 +26,7 @@ function RegisterPlayer(props){
         ).then((data) => {
             props.updateToken(data.sessionToken);
             props.updateUserRole(data.user.isAdmin.toString());
-        }).then(alert('Your account has been created!'))
+        }).then(notification({message: 'Success!', description:'Your account has been created!'}))
     };
 
     return(

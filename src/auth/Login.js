@@ -3,6 +3,7 @@ import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} fr
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
+import { notification, Space } from 'antd';
 
 
 const LoginPlayer = (props) => {
