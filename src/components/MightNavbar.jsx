@@ -72,10 +72,12 @@ const MightNavbar = () => {
                         <NavItem>
                             {localStorage.getItem('token') !== null ? <NavLink style={{}} href='/admin'>Admin</NavLink>: null}
                         </NavItem>
-                        {localStorage.getItem('role') == 'true' ? (
+                        {localStorage.getItem("role") == "true" ? (
                             <NavItem>
                                 {localStorage.getItem('token') !== null ? (
-                                    <NavLink style={{}} href='/admin'>Admin</NavLink>
+                                    <NavLink style={{}} href='/admin'>
+                                        Admin
+                                    </NavLink>
                                 ) :null}
                             </NavItem>
                         ) :null}
