@@ -4,8 +4,8 @@ import APIURL from '../helpers/environment';
 
 const UserList = (props) => {
     
-    const deleteUser = (user) => {
-        fetch(`${APIURL}/user/${user.id}`, {
+    const deleteUser = (id) => {
+        fetch(`${APIURL}/user/${id}`, {
             method:'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
