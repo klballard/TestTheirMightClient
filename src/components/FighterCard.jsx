@@ -20,7 +20,6 @@ const FighterCard = (props) => {
             e.preventDefault();
             console.log('middle')
             fetch(`${APIURL}/fighter/save`, {
-
                 method:'POST',
                 body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.image.url}),
                 headers: new Headers({
@@ -30,6 +29,8 @@ const FighterCard = (props) => {
             }).then((res) => res.json())
             .then((fighter) => {
                 console.log(fighter, 'it worked');
+            }).catch((err) => {
+                console.log(err);
             })
             
             
