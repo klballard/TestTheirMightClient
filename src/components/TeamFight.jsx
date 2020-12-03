@@ -70,17 +70,17 @@ const TeamFight = (props) => {
 
     const teamFightResults = () => {
         if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) > sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
-            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+            alert(`\n                    ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
                     ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
                     ${teamOne.teamName} wins!`)
         }
         else if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) < sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
-            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+            alert(`\n                    ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
                     ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
                     ${teamTwo.teamName} wins!`)
         }
         else if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) === sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
-            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+            alert(`\n                    ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
                     ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
                     It's a draw! Good fight.`)
         }
