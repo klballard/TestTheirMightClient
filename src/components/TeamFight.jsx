@@ -80,11 +80,12 @@ const TeamFight = (props) => {
                             <Col>
                                 <table key={teamOne.id}>
                                     <tr>
-                                        <th><img alt='' src={teamOne.fighterOneImg}/></th>
-                                        <th><img alt='' src={teamOne.fighterTwoImg}/></th>
-                                        <th><img alt='' src={teamOne.fighterThreeImg}/></th>
-                                        <th><img alt='' src={teamOne.fighterFourImg}/></th>
-                                        <th><img alt='' src={teamOne.fighterFiveImg}/></th>
+                                        <th>{teamOne.teamName}</th>
+                                        <th><img width='100%' height='200px' alt='' src={teamOne.fighterOneImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamOne.fighterTwoImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamOne.fighterThreeImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamOne.fighterFourImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamOne.fighterFiveImg}/></th>
                                     </tr>
                                     <tr>
                                         <td>{teamOne.fighterOne}</td>
@@ -114,11 +115,12 @@ const TeamFight = (props) => {
                             <Col>
                                 <table key={teamTwo.id}>
                                     <tr>
-                                        <th><img alt='' src={teamTwo.fighterOneImg}/></th>
-                                        <th><img alt='' src={teamTwo.fighterTwoImg}/></th>
-                                        <th><img alt='' src={teamTwo.fighterThreeImg}/></th>
-                                        <th><img alt='' src={teamTwo.fighterFourImg}/></th>
-                                        <th><img alt='' src={teamTwo.fighterFiveImg}/></th>
+                                        <th>{teamTwo.teamName}</th>
+                                        <th><img width='100%' height='200px' alt='' src={teamTwo.fighterOneImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamTwo.fighterTwoImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamTwo.fighterThreeImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFourImg}/></th>
+                                        <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFiveImg}/></th>
                                     </tr>
                                     <tr>
                                         <td>{teamTwo.fighterOne}</td>
