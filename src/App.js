@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import '~antd/dist/antd.css';
+import 'antd/dist/antd.css';
 import './App.css';
 import React, {useState,useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
