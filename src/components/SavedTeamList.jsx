@@ -27,7 +27,7 @@ const TeamList = (props) => {
                     <td>{team.fighterFive}</td>
                     <td><b>{sum([team.fighterOnePL, team.fighterTwoPL, team.fighterThreePL, team.fighterFourPL, team.fighterFivePL])}</b></td>
                     <td><Button color='warning' onClick={() => {props.teamEditUpdate(team); props.updateOn()}}></Button></td>
-                    <td><Button className='listButton m-1' color='danger' onClick={() => {deleteTeam(team)}}></Button></td>
+                    <td><Button className='listButton m-1' color='danger' onClick={() => {deleteTeam(team)}}>X</Button></td>
                 </tr>
             )
         })

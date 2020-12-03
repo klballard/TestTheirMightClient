@@ -3,16 +3,16 @@ import {Button,Table} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
 const UserList = (props) => {
-    /*
+    
     const deleteUser = (user) => {
         fetch(`${APIURL}/user/${user.id}`, {
             method:'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': localStorage.token
             })
         }).then(() => props.fetchUsers())
-    }*/
+    }
 
     const userMap = () => {
         return props.users.map((user) => {
@@ -21,6 +21,7 @@ const UserList = (props) => {
                     <th scope='row'>{user.email}</th>
                     <td>********</td>
                     <td>{user.createdAt}</td>
+                    <td><Button color='danger' onClick={() => {deleteUser(user)}}>X</Button></td>
                 </tr>
             )
         })
@@ -36,6 +37,7 @@ const UserList = (props) => {
                     <th>Email</th>
                     <th>Password</th>
                     <th>Created at: </th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
