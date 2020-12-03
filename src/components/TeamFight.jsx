@@ -79,8 +79,8 @@ const TeamFight = (props) => {
                         <Card>
                             <Col>
                                 <table key={teamOne.id}>
+                                    <tr>{teamOne.teamName}</tr>
                                     <tr>
-                                        <th>{teamOne.teamName}</th>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterOneImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterTwoImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterThreeImg}/></th>
@@ -114,8 +114,8 @@ const TeamFight = (props) => {
                         <Card>
                             <Col>
                                 <table key={teamTwo.id}>
+                                    <tr>{teamTwo.teamName}</tr>
                                     <tr>
-                                        <th>{teamTwo.teamName}</th>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterOneImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterTwoImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterThreeImg}/></th>
@@ -123,6 +123,7 @@ const TeamFight = (props) => {
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFiveImg}/></th>
                                     </tr>
                                     <tr>
+                                        <td></td>
                                         <td>{teamTwo.fighterOne}</td>
                                         <td>{teamTwo.fighterTwo}</td>
                                         <td>{teamTwo.fighterThree}</td>
