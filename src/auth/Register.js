@@ -24,6 +24,7 @@ function RegisterPlayer(props){
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken);
+            props.updateUserRole(data.user.isAdmin.toString());
         }).then(alert('Your account has been created!'))
     };
 

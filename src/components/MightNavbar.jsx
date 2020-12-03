@@ -33,7 +33,7 @@ const MightNavbar = () => {
         localStorage.setItem('role', newRole);
         setUserRole(newRole);
         console.log(newRole);
-    }
+    };
 
     const logOut = () => {
         localStorage.clear('token');
