@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} from 'reactstrap';
+import {Modal, ModalHeader, ModalBody, Input, Label, Form, FormGroup} from 'reactstrap';
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
-import { notification, Space } from 'antd';
+import { Button, notification, Space } from 'antd';
 
 function RegisterPlayer(props){
     const {buttonLabel, className} = props;
@@ -29,6 +29,14 @@ function RegisterPlayer(props){
         }).then(notification({message: 'Success!', description:'Your account has been created!'}))
     };
 
+    const openNotificationWithIcon = type => {
+        notification[type]({
+          message: 'Success!',
+          description:
+            'Your account has been created!',
+        });
+      };
+
     return(
         <div>
             {localStorage.getItem('token') === null ? <Button type='button' onClick={toggle}>Register</Button>: null}
@@ -45,7 +53,9 @@ function RegisterPlayer(props){
                             <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password}/>
                         </FormGroup>
                         <FormGroup>
-                            <Button type='submit' onClick={toggle}>Create account</Button>{' '}
+                            <Space>
+                            <Button type='submit' onClick={toggle, openNotificationWithIcon('success')}>Create account</Button>{' '}
+                            </Space>
                             <Button onClick={toggle}>Cancel</Button>
                         </FormGroup>
                     </Form>
