@@ -33,7 +33,7 @@ const FighterSearch = (props) => {
         console.log(setResults);
         console.log(results);
         setSearchQuery('');
-        if(results.length === 0){
+        if(results.length === null){
             setSearchMessage('That fighter will be future DLC. Try again!')
         } else {
             setSearchMessage('')
@@ -71,7 +71,7 @@ const FighterSearch = (props) => {
             <div>
                 <Container>
                     <Row>
-                        {results.length === 0 ? (
+                        {results.length === null ? (
                             <div id="searchResult" className="ml-auto mr-auto">
                                 <Jumbotron>
                                     <h3 className="jumbo">{searchMessage}</h3>
