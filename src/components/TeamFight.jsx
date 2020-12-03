@@ -68,6 +68,24 @@ const TeamFight = (props) => {
     return total;
     }
 
+    const teamFightResults = () => {
+        if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) > sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
+            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+                    ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
+                    ${teamOne.teamName} wins!`)
+        }
+        else if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) < sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
+            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+                    ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
+                    ${teamTwo.teamName} wins!`)
+        }
+        else if(sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL]) === sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])){
+            alert(`\n                   ${teamOne.teamName}'s power level: ${sum([teamOne.fighterOnePL, teamOne.fighterTwoPL, teamOne.fighterThreePL, teamOne.fighterFourPL, teamOne.fighterFivePL])}
+                    ${teamTwo.teamName}'s power level: ${sum([teamTwo.fighterOnePL, teamTwo.fighterTwoPL, teamTwo.fighterThreePL, teamTwo.fighterFourPL, teamTwo.fighterFivePL])}\n
+                    It's a draw! Good fight.`)
+        }
+    }
+
     return(
         <div>
             <div style={{ marginTop:'120px', textAlign:'center'}}>
@@ -78,7 +96,7 @@ const TeamFight = (props) => {
                     <Col>
                         <Card>
                             <Col>
-                                <table key={teamOne.id}>
+                                <table style={{textAlign:'center'}} key={teamOne.id}>
                                     <tr>{teamOne.teamName}</tr>
                                     <tr>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterOneImg}/></th>
@@ -96,6 +114,7 @@ const TeamFight = (props) => {
                                     </tr>
                                 </table>
                             </Col>
+                            <Row></Row>
                             <Row>
                             <select value={firstSelect} onChange={e => setFirstSelect(e.currentTarget.value)}>{teams.map(team => (
                                 <option key={team.id} value={team.id}>{team.teamName}</option>
@@ -108,12 +127,12 @@ const TeamFight = (props) => {
                     <div style={{marginTop:'350px'}}>
                         <h3>VS.</h3>
                         <br/>
-                        <Button>FIGHT!</Button>
+                        <Button onClick={teamFightResults}>FIGHT!</Button>
                     </div>
                     <Col>
                         <Card>
                             <Col>
-                                <table key={teamTwo.id}>
+                                <table style={{textAlign:'center'}} key={teamTwo.id}>
                                     <tr>{teamTwo.teamName}</tr>
                                     <tr>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterOneImg}/></th>
@@ -123,7 +142,6 @@ const TeamFight = (props) => {
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFiveImg}/></th>
                                     </tr>
                                     <tr>
-                                        <td></td>
                                         <td>{teamTwo.fighterOne}</td>
                                         <td>{teamTwo.fighterTwo}</td>
                                         <td>{teamTwo.fighterThree}</td>
@@ -132,6 +150,7 @@ const TeamFight = (props) => {
                                     </tr>
                                 </table>
                             </Col>
+                            <Row></Row>
                             <Row>
                             <select value={secondSelect} onChange={e => setSecondSelect(e.currentTarget.value)}>{teams.map(team => (
                                 <option key={team.id} value={team.id}>{team.teamName}</option>
