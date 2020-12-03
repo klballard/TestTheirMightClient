@@ -69,9 +69,6 @@ const MightNavbar = () => {
                                                                       </DropdownMenu>
                                                                       </UncontrolledDropdown>: null}
                         </NavItem>
-                        <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink style={{}} href='/admin'>Admin</NavLink>: null}
-                        </NavItem>
                         {localStorage.getItem("role") == "true" ? (
                             <NavItem>
                                 {localStorage.getItem('token') !== null ? (
@@ -92,13 +89,13 @@ const MightNavbar = () => {
             </Navbar>
             <Switch>
                 <Route exact path='/home'><Homepage/></Route>
-                <Route exact path='/search'><FighterSearch sessionToken={sessionToken}/></Route>
-                <Route exact path='/1v1'><SingleFight sessionToken={sessionToken}/></Route>
-                <Route exact path='/5v5'><TeamFight sessionToken={sessionToken}/></Route>
-                <Route exact path='/createteam'><CreateTeam sessionToken={sessionToken}/></Route>
-                <Route exact path='/savedfighters'><SavedFighters sessionToken={sessionToken}/></Route>
-                <Route exact path='/savedteams'><SavedTeams sessionToken={sessionToken}/></Route>
-                <Route exact path='/admin'><AdminPage sessionToken={sessionToken}/></Route>
+                <Route exact path='/search'><FighterSearch/></Route>
+                <Route exact path='/1v1'><SingleFight/></Route>
+                <Route exact path='/5v5'><TeamFight/></Route>
+                <Route exact path='/createteam'><CreateTeam/></Route>
+                <Route exact path='/savedfighters'><SavedFighters/></Route>
+                <Route exact path='/savedteams'><SavedTeams/></Route>
+                <Route exact path='/admin'><AdminPage/></Route>
                 <Route path='*' component={Homepage}/>
             </Switch>
         </div>
