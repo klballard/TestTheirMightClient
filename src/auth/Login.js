@@ -3,7 +3,7 @@ import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} fr
 import {makeStyles} from '@material-ui/core';
 import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
-import { notification, Space } from 'antd';
+
 
 
 const LoginPlayer = (props) => {
@@ -33,7 +33,7 @@ const LoginPlayer = (props) => {
 
     return(
         <div>
-            {localStorage.getItem('token') === null ? <Button onClick={toggle}>Login</Button>: null}
+            {localStorage.getItem('token') === null ? <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={toggle}>Login</Button>: null}
             <Modal isOpen={loginModal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>Welcome back!</ModalHeader>
                 <ModalBody>
@@ -48,8 +48,8 @@ const LoginPlayer = (props) => {
                             <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
                         </FormGroup>
                         <FormGroup>
-                            <Button type='submit' onClick={toggle}>Login</Button>{' '}
-                            <Button onClick={toggle}>Cancel</Button>
+                            <Button type='submit' style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={toggle}>Login</Button>{' '}
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={toggle}>Cancel</Button>
                         </FormGroup>
                     </Form>
                 </ModalBody>

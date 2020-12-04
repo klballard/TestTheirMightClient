@@ -2,7 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'antd/dist/antd.css';
 import './App.css';
 import React, {useState,useEffect} from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles, ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 import {BrowserRouter as Router} from 'react-router-dom';
 import MightNavbar from './components/MightNavbar';
 
@@ -15,6 +17,12 @@ let useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
   },
 }));
+ 
+const fontTheme = createMuiTheme({
+  typography:{
+    fontFamily:['Bangers'].join(','),
+  },
+});
 
 
 function App() {
@@ -24,11 +32,16 @@ function App() {
   }, []);
 
   return (
+    <ThemeProvider theme={fontTheme}>
     <div className={classes.root}>
+      <CssBaseline/>
+      <Typography>
       <Router>
         <MightNavbar/>
       </Router>
+      </Typography>
     </div>
+    </ThemeProvider>
   );
 }
 

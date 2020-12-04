@@ -42,7 +42,7 @@ const MightNavbar = () => {
     };
     return(
         <div>
-            <Navbar fixed='top' light expand='md' color='light'>
+            <Navbar fixed='top' light expand='md' color='light' style={{border:'5px solid black'}}>
                 <NavbarBrand href='/home'>TEST THEIR MIGHT</NavbarBrand>
                 <NavbarToggler onClick ={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
@@ -82,7 +82,7 @@ const MightNavbar = () => {
                             <Auth updateToken={updateToken} updateUserRole={userRoles}/>
                         </NavItem>
                         <NavLink href='/home'>
-                            {localStorage.getItem('token') !== null ? <Button style={{marginRight: 20}} onClick={logOut}>Log out</Button>: null}
+                            {localStorage.getItem('token') !== null ? <Button style={{marginRight: 20, border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={logOut}>Log out</Button>: null}
                         </NavLink>
                     </Nav>
                 </Collapse>

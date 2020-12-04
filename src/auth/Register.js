@@ -30,9 +30,9 @@ function RegisterPlayer(props){
 
     return(
         <div>
-            {localStorage.getItem('token') === null ? <Button type='button' onClick={toggle}>Register</Button>: null}
+            {localStorage.getItem('token') === null ? <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} type='button' onClick={toggle}>Register</Button>: null}
             <Modal isOpen={registerModal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Create an account and begin the fights!</ModalHeader>
+                <ModalHeader toggle={toggle}>Create an account and begin fighting!</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
@@ -44,8 +44,8 @@ function RegisterPlayer(props){
                             <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password}/>
                         </FormGroup>
                         <FormGroup>
-                            <Button type='submit' onClick={toggle}>Create account</Button>{' '}
-                            <Button onClick={toggle}>Cancel</Button>
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} type='submit' onClick={toggle}>Create account</Button>{' '}
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={toggle}>Cancel</Button>
                         </FormGroup>
                     </Form>
                 </ModalBody>
