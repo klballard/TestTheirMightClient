@@ -10,8 +10,8 @@ const FighterSearch = (props) => {
     //let proxyURL ="https://cors-anywhere.herokuapp.com/";
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
-    const getData = (e) => {
-        e.preventDefault();
+    const getData = () => {
+        //e.preventDefault();
         fetch(baseURL)
             .then((res) => res.json())
             /*
@@ -42,8 +42,9 @@ const FighterSearch = (props) => {
 
     
 
-    const onSubmit = () => {
+    const onSubmit = (event) => {
         getData();
+        event.preventDefault();
     }
 
     const onChange = (e) => {
