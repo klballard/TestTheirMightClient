@@ -159,7 +159,7 @@ const CreateTeam = (props) => {
                             <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterOne.id}>
-                                <tr><img alt='1' src={fighterOne.image} style={{ width:'100%', height:'auto'}}></img></tr>
+                                <tr><img alt='' src={fighterOne.image} style={{ width:'100%', height:'auto'}}></img></tr>
                                 </table>
                             </Col>
                             <Col>
@@ -176,7 +176,7 @@ const CreateTeam = (props) => {
                         <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterTwo.id}>
-                                    <tr><img alt='2' src={fighterTwo.image} style={{ width:'100%', height:'auto'}}></img></tr>
+                                    <tr><img alt='' src={fighterTwo.image} style={{ width:'100%', height:'auto'}}></img></tr>
                                 </table>
                             </Col>
                             <Col>
@@ -193,7 +193,7 @@ const CreateTeam = (props) => {
                         <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterThree.id}>
-                                    <tr><img alt='3' src={fighterThree.image} style={{ width:'100%', height:'auto'}}></img></tr>
+                                    <tr><img alt='' src={fighterThree.image} style={{ width:'100%', height:'auto'}}></img></tr>
                                 </table>
                             </Col>
                             <Col>
@@ -210,7 +210,7 @@ const CreateTeam = (props) => {
                         <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterFour.id}>
-                                    <tr><img alt='4' src={fighterFour.image} style={{ width:'100%', height:'auto'}}></img></tr>
+                                    <tr><img alt='' src={fighterFour.image} style={{ width:'100%', height:'auto'}}></img></tr>
                                 </table>
                             </Col>
                             <Col>
@@ -227,7 +227,7 @@ const CreateTeam = (props) => {
                         <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterFive.id}>
-                                    <tr><img alt='5' src={fighterFive.image} style={{ width:'100%', height:'auto'}}></img></tr>
+                                    <tr><img alt='' src={fighterFive.image} style={{ width:'100%', height:'auto'}}></img></tr>
                                 </table>
                             </Col>
                             <Col>
