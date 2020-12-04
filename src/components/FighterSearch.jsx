@@ -53,14 +53,14 @@ const FighterSearch = (props) => {
 
     return(
         <div style={{padding:'40px'}}>
-            <div className='main ml-auto mr-auto mt-5 mb-5 p-2 col-8 bg-white rounded'>
-                <div className='mainDiv'>
+            <div style={{width: '60%', textAlign:'center', opacity:'90%', height:'8em'}} className='main ml-auto mr-auto mt-5 mb-5 p-2 col-8 bg-white rounded'>
+                <div style={{marginRight: 'auto', marginLeft:'auto'}} className='mainDiv'>
                     <h3 className='search mb-3 p-1'><a href='https://superheroapi.com/ids.html' target='_blank'>Search</a> for a fighter!</h3>
-                    <Form className='form' onSubmit={onSubmit}>
+                    <Form style={{marginLeft:'30%'}} className='form' onSubmit={onSubmit}>
                         <InputGroup size='lg'>
-                            <Input className='input col-6' type='text' onChange={onChange} value={searchQuery} placeholder='By name (ex: Batman, Predator)'/>
+                            <Input style={{height: '60px', border:'3px solid black', color:'black', backgroundColor:'white'}} className='input col-6' type='text' onChange={onChange} value={searchQuery} placeholder='By name (ex: Batman, Predator)'/>
                             <div className='input-group-append'>
-                                <Button className='btn' type='submit'>Search</Button>
+                                <Button style={{borderLeft: '0px', border:'3px solid black', color:'black', backgroundColor:'white'}} className='btn' type='submit'>Search</Button>
                             </div>
                         </InputGroup>
                     </Form>
@@ -68,7 +68,7 @@ const FighterSearch = (props) => {
                     <br/>
                 </div>
             </div>
-            <div>
+            <div style={{marginTop:'-3%'}}>
                 <Container>
                     <Row>
                         {results.length == null ? (

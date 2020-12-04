@@ -40,12 +40,12 @@ const LoginPlayer = (props) => {
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="email">Email: </Label>
-                            <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email" value={email}/>
+                            <Input style={{border:'2px solid black'}} onChange={(e) => setEmail(e.target.value)} type="email" name="email" value={email}/>
                     
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="password">Password: </Label>
-                            <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
+                            <Input style={{border:'2px solid black'}} onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
                         </FormGroup>
                         <FormGroup>
                             <Button type='submit' style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={toggle}>Login</Button>{' '}

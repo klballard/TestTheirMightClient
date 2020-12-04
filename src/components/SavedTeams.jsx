@@ -40,8 +40,8 @@ const SavedTeams = (props) => {
     }
 
     return(
-        <div>
-            <Card body className='ml-auto mr-auto mt-5 col-7'>
+        <div style={{marginTop:'5%'}}>
+            <Card style={{border:'5px solid black'}} body className='ml-auto mr-auto mt-5 col-7'>
                 <Row>
                     <Col>
                         <TeamList teams={teams} fetchTeams={fetchTeams} teamEditUpdate={teamEditUpdate} updateOn={updateOn}/>

@@ -43,26 +43,26 @@ const MightNavbar = () => {
     return(
         <div>
             <Navbar fixed='top' light expand='md' color='light' style={{border:'5px solid black'}}>
-                <NavbarBrand href='/home'>TEST THEIR MIGHT</NavbarBrand>
+                <NavbarBrand style={{fontSize:'24px'}} href='/home'>TEST THEIR MIGHT</NavbarBrand>
                 <NavbarToggler onClick ={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='mr-auto' navbar>
-                        <NavItem>
-                            {localStorage.getItem('token') !== null ? <NavLink style={{paddingLeft:'50em'}} href='/search'>Search</NavLink>: null}
+                        <NavItem style={{fontSize:'24px'}}>
+                            {localStorage.getItem('token') !== null ? <NavLink style={{paddingLeft:'30em'}} href='/search'>Search</NavLink>: null}
                         </NavItem>
-                        <NavItem>
+                        <NavItem style={{fontSize:'24px'}}>
                             {localStorage.getItem('token') !== null ? <UncontrolledDropdown nav inNavbar>
                                                                       <DropdownToggle nav caret>Fight</DropdownToggle>
-                                                                      <DropdownMenu right>
+                                                                      <DropdownMenu style={{fontSize:'24px', textAlign:'center'}} right>
                                                                       <DropdownItem href='1v1'>1 v 1</DropdownItem>
                                                                       <DropdownItem href='5v5'>5 v 5</DropdownItem>
                                                                       </DropdownMenu>
                                                                       </UncontrolledDropdown>: null}
                         </NavItem>
-                        <NavItem>
+                        <NavItem style={{fontSize:'24px'}}>
                             {localStorage.getItem('token') !== null ? <UncontrolledDropdown nav inNavbar>
                                                                       <DropdownToggle nav caret>Roster</DropdownToggle>
-                                                                      <DropdownMenu right>
+                                                                      <DropdownMenu style={{fontSize:'24px', textAlign:'center'}} right>
                                                                       <DropdownItem href='/savedfighters'>Saved Fighters</DropdownItem>
                                                                       <DropdownItem href='/createteam'>Create a Team</DropdownItem>
                                                                       <DropdownItem href='/savedteams'>Saved Teams</DropdownItem>
@@ -70,7 +70,7 @@ const MightNavbar = () => {
                                                                       </UncontrolledDropdown>: null}
                         </NavItem>
                         {localStorage.getItem("role") == "true" ? (
-                            <NavItem>
+                            <NavItem style={{fontSize:'24px'}}>
                                 {localStorage.getItem('token') !== null ? (
                                     <NavLink style={{}} href='/admin'>
                                         Admin

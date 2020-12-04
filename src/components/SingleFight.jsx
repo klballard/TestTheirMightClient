@@ -100,40 +100,40 @@ const SingleFight = (props) => {
             <div>
             <Row>
             <Col>
-            <Card style={{ textAlign:'center', height:'auto', width:'300px', marginTop:'50px', marginLeft:'auto', marginRight:'120px'}}>
-                <Col>
+            <Card style={{ border:'solid 3px black', textAlign:'center', height:'auto', width:'300px', marginTop:'50px', marginLeft:'auto', marginRight:'120px'}}>
+                <Row>
                     <table key={fighterOne.id}>
-                    <tr><img alt='Select first fighter..' src={fighterOne.image} width='100%' height='300px'></img></tr>
+                    <tr><img alt='' src={fighterOne.image} width='92%' height='300px'></img></tr>
                     </table>
-                </Col>
-                <Col>
+                </Row>
+                <Row style={{marginLeft:'auto', marginRight:'auto'}}>
                     <select value={selectValue}  onChange={e => setSelectValue(e.currentTarget.value)}>{fighters.map(fighter => (
                     <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                     ))}</select>
                 <br/>
-            <Button onClick={fetchFighterOne}>Ready Player One?</Button>
-            </Col>
+            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterOne}>Ready Player One?</Button>
+            </Row>
             </Card>
             </Col>
-            <div style={{marginTop:'350px'}}>
-            <h3>VS.</h3>
+            <div style={{marginTop:'350px', textAlign:'center'}}>
+            <h1>VS.</h1>
             <br/>
-            <Button onClick={fightResults}>FIGHT!</Button>
+            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white', fontSize:'28px'}} onClick={fightResults}>FIGHT!</Button>
             </div>
             <Col>
-            <Card style={{ textAlign:'center', height:'auto', width:'300px', marginTop:'50px', marginLeft:'120px', marginRight:'auto'}}>
-                <Col>
+            <Card style={{border:'solid 3px black', textAlign:'center', height:'auto', width:'300px', marginTop:'50px', marginLeft:'120px', marginRight:'auto'}}>
+                <Row>
                 <table key={fighterTwo.id}>
-                <tr><img alt='Select second fighter..' src={fighterTwo.image} width='100%' height='300px'></img></tr>
+                <tr><img alt='' src={fighterTwo.image} width='92%' height='300px'></img></tr>
                 </table>
-                </Col>
-                <Col>
-                    <select value={secondValue} onChange={e => setSecondValue(e.currentTarget.value)}>{fighters.map(fighter => (
+                </Row>
+                <Row style={{marginLeft:'auto', marginRight:'auto'}}>
+                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterTwo}>Ready Player Two?</Button>
+                    <br/>
+                <select value={secondValue} onChange={e => setSecondValue(e.currentTarget.value)}>{fighters.map(fighter => (
                         <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                     ))}</select>
-                    <br/>
-                <Button onClick={fetchFighterTwo}>Ready Player Two?</Button>
-                </Col>
+                </Row>
             </Card>
             </Col>
             </Row>

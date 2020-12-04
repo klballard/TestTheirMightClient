@@ -25,7 +25,7 @@ const TeamList = (props) => {
                     <td>{team.fighterThree}</td>
                     <td>{team.fighterFour}</td>
                     <td>{team.fighterFive}</td>
-                    <td><b>{sum([team.fighterOnePL, team.fighterTwoPL, team.fighterThreePL, team.fighterFourPL, team.fighterFivePL])}</b></td>
+                    <td style={{fontFamily:'Open Sans'}}><b>{sum([team.fighterOnePL, team.fighterTwoPL, team.fighterThreePL, team.fighterFourPL, team.fighterFivePL])}</b></td>
                     <td><Button color='warning' onClick={() => {props.teamEditUpdate(team); props.updateOn()}}></Button></td>
                     <td><Button className='listButton m-1' color='danger' onClick={() => {deleteTeam(team)}}>X</Button></td>
                 </tr>
@@ -51,7 +51,7 @@ const TeamList = (props) => {
         <>
         <h3>Saved Teams</h3>
         <hr/>
-        <Table>
+        <Table style={{fontSize:'20px'}}>
             <thead>
                 <tr>
                     <th>Team Name</th>

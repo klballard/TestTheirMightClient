@@ -19,14 +19,14 @@ const FighterList = (props) => {
         return props.fighters.map((fighter, index) => {
             return(
                 <tr key={index}>
-                    <th scope='row'><img alt='fighterthumbnail' src={fighter.image} width='20' height='20'></img>   {fighter.fighterName}</th>
-                    <td>{fighter.intelligence}</td>
-                    <td>{fighter.strength}</td>
-                    <td>{fighter.speed}</td>
-                    <td>{fighter.durability}</td>
-                    <td>{fighter.power}</td>
-                    <td>{fighter.combat}</td>
-                    <td><b>{sum([fighter.intelligence, fighter.strength, fighter.speed, fighter.durability, fighter.power, fighter.combat])}</b></td>
+                    <th scope='row'><img alt='fighterthumbnail' src={fighter.image} width='50' height='50'></img><br/>{fighter.fighterName}</th>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.intelligence}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.strength}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.speed}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.durability}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.power}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{fighter.combat}</td>
+                    <td style={{fontFamily:'Open Sans'}}><b>{sum([fighter.intelligence, fighter.strength, fighter.speed, fighter.durability, fighter.power, fighter.combat])}</b></td>
                     <td><Button color='warning' onClick={() => {props.fighterEditUpdate(fighter); props.updateOn()}}></Button></td>
                     <td><Button className='listButton m-1' color='danger' onClick={() => {deleteFighter(fighter)}}>X</Button></td>
                 </tr>
@@ -54,7 +54,7 @@ const FighterList = (props) => {
         <>
         <h3>Saved Fighters</h3>
         <hr/>
-        <Table>
+        <Table style={{fontSize:'20px'}}>
             <thead>
                 <tr>
                     <th>Name</th>

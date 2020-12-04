@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Card, CardBody, CardImg, CardGroup, CardSubtitle, CardText, CardTitle, Col, Modal, ModalBody, ModalHeader} from 'reactstrap';
+import {Button, Card, CardBody, CardImg, CardGroup, CardSubtitle, CardText, CardTitle, Col, Modal, ModalBody, ModalHeader, DropdownToggle,Dropdown,DropdownMenu,DropdownItem} from 'reactstrap';
 import {List, ListItem} from '@material-ui/core';
 import APIURL from '../helpers/environment';
 
@@ -11,8 +11,10 @@ const FighterCard = (props) => {
     console.log(props.results.powerstats);
     console.log(props.results.powerstats.intelligence);
     console.log(props.image);
-    
 
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    
     //const [results, setResults] = useState(props.results);
     const saveFighter = (e) => {
         //props.results.map(() => {
@@ -37,24 +39,28 @@ const FighterCard = (props) => {
     }
     return(
         <div>
-            <Col className='col-12'>
+            <Col style={{marginLeft:'35%', marginRight:'auto'}} className='col-12'>
                 <CardGroup className='card-group m-3'>
-                    <Card className='card overflow-auto' style={{maxWidth: "250px", maxHeight:"1000px", minHeight:"425px"}}>
-                        <CardTitle>
+                    <Card className='card overflow-auto' style={{border:'5px solid black', maxWidth: "250px", maxHeight:"950px", minHeight:"425px"}}>
+                        <CardTitle style={{fontSize:'30px', textAlign:'center'}}>
                             <b>{props.results.name}</b>
                         </CardTitle>
-                        <CardImg top width="100%" src={props.results.image.url} alt="Fighter pic"/>
-                        <CardBody>
-                            <b>Stats:</b>
-                            <List>
-                                <ListItem>Intelligence: {props.results.powerstats.intelligence}</ListItem>
-                                <ListItem>Strength: {props.results.powerstats.strength}</ListItem>
-                                <ListItem>Speed: {props.results.powerstats.speed}</ListItem>
-                                <ListItem>Durability: {props.results.powerstats.durability}</ListItem>
-                                <ListItem>Power: {props.results.powerstats.power}</ListItem>
-                                <ListItem>Combat: {props.results.powerstats.combat}</ListItem>
-                            </List>
-                            <Button className='mt-2' onClick={saveFighter}>Add Fighter to Roster</Button>
+                        <CardImg top width="100%" style={{height:'325px'}} src={props.results.image.url} alt="Fighter pic"/>
+                        <CardBody style={{textAlign:'center'}}>
+                            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                            <DropdownToggle style={{border:'3px solid black', color:'black', backgroundColor:'white'}} caret>
+                                Stats:
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>Intelligence: {props.results.powerstats.intelligence}</DropdownItem>
+                                <DropdownItem>Strength: {props.results.powerstats.strength}</DropdownItem>
+                                <DropdownItem>Speed: {props.results.powerstats.speed}</DropdownItem>
+                                <DropdownItem>Durability: {props.results.powerstats.durability}</DropdownItem>
+                                <DropdownItem>Power: {props.results.powerstats.power}</DropdownItem>
+                                <DropdownItem>Combat: {props.results.powerstats.combat}</DropdownItem>
+                            </DropdownMenu>
+                            </Dropdown>
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} className='mt-2' onClick={saveFighter}>Add Fighter to Roster</Button>
                         </CardBody>
                     </Card>
                 </CardGroup>

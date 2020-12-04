@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Card, Col, Row, Button} from 'reactstrap';
+import {Card, CardTitle, Col, Row, Button} from 'reactstrap';
 import APIURL from '../helpers/environment';
-import { notification, Space } from 'antd';
 
 const TeamFight = (props) => {
     const [teams, setTeams] = useState([]);
@@ -92,13 +91,20 @@ const TeamFight = (props) => {
             <div style={{ marginTop:'120px', textAlign:'center'}}>
                 <h4>Team battle!</h4>
             </div>
-            <div>
+            <div style={{textAlign:'center'}}>
                 <Row>
                     <Col>
-                        <Card>
+                        <Card style={{border:'3px solid black', height:'23em'}}>
+                            <CardTitle style={{fontSize:'32px'}}>{teamOne.teamName}</CardTitle>
                             <Col>
                                 <table style={{textAlign:'center'}} key={teamOne.id}>
-                                    <tr>{teamOne.teamName}</tr>
+                                    <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    </tr>
                                     <tr>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterOneImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterTwoImg}/></th>
@@ -106,7 +112,7 @@ const TeamFight = (props) => {
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterFourImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamOne.fighterFiveImg}/></th>
                                     </tr>
-                                    <tr>
+                                    <tr style={{fontSize:'20px'}}>
                                         <td>{teamOne.fighterOne}</td>
                                         <td>{teamOne.fighterTwo}</td>
                                         <td>{teamOne.fighterThree}</td>
@@ -116,25 +122,25 @@ const TeamFight = (props) => {
                                 </table>
                             </Col>
                             <Row></Row>
-                            <Row>
+                            <Row style={{marginLeft:'auto', marginRight:'auto'}}>
                             <select value={firstSelect} onChange={e => setFirstSelect(e.currentTarget.value)}>{teams.map(team => (
                                 <option key={team.id} value={team.id}>{team.teamName}</option>
                             ))}</select>
                             <br/>
-                            <Button onClick={fetchTeamOne}>Load Team 1</Button>
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchTeamOne}>Ready Team 1?</Button>
                             </Row>
                         </Card>
                     </Col>
                     <div style={{marginTop:'350px'}}>
-                        <h3>VS.</h3>
+                        <h1>VS.</h1>
                         <br/>
-                        <Button onClick={teamFightResults}>FIGHT!</Button>
+                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'white', fontSize:'28px'}} onClick={teamFightResults}>FIGHT!</Button>
                     </div>
                     <Col>
-                        <Card>
+                        <Card style={{border:'3px solid black', height:'23em'}}>
+                            <CardTitle style={{fontSize:'32px'}}>{teamTwo.teamName}</CardTitle>
                             <Col>
                                 <table style={{textAlign:'center'}} key={teamTwo.id}>
-                                    <tr>{teamTwo.teamName}</tr>
                                     <tr>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterOneImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterTwoImg}/></th>
@@ -142,7 +148,7 @@ const TeamFight = (props) => {
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFourImg}/></th>
                                         <th><img width='100%' height='200px' alt='' src={teamTwo.fighterFiveImg}/></th>
                                     </tr>
-                                    <tr>
+                                    <tr style={{fontSize:'20px'}}>
                                         <td>{teamTwo.fighterOne}</td>
                                         <td>{teamTwo.fighterTwo}</td>
                                         <td>{teamTwo.fighterThree}</td>
@@ -152,12 +158,13 @@ const TeamFight = (props) => {
                                 </table>
                             </Col>
                             <Row></Row>
-                            <Row>
+                            <Row style={{marginLeft:'auto', marginRight:'auto'}}>
+                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchTeamTwo}>Ready Team 2?</Button>
+                            <br/>
                             <select value={secondSelect} onChange={e => setSecondSelect(e.currentTarget.value)}>{teams.map(team => (
                                 <option key={team.id} value={team.id}>{team.teamName}</option>
                             ))}</select>
-                            <br/>
-                            <Button onClick={fetchTeamTwo}>Load Team 2</Button>
+                            
                             </Row>
                         </Card>
                     </Col>

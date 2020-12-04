@@ -37,11 +37,11 @@ function RegisterPlayer(props){
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor='email'>Email: </Label>
-                            <Input onChange={(e) => setEmail(e.target.value)} name='email' type='email' value={email}/>
+                            <Input style={{border:'2px solid black'}} onChange={(e) => setEmail(e.target.value)} name='email' type='email' value={email}/>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor='password'>Password: </Label>
-                            <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password}/>
+                            <Input style={{border:'2px solid black'}} onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password}/>
                         </FormGroup>
                         <FormGroup>
                             <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} type='submit' onClick={toggle}>Create account</Button>{' '}

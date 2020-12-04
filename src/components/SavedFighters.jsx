@@ -44,7 +44,8 @@ const SavedFighters = (props) => {
 
     return(
         <div>
-            <Card body className='ml-auto mr-auto mt-5 col-7'>
+            <div style={{marginTop:'5%'}}>
+            <Card style={{border:'5px solid black'}} body className='ml-auto mr-auto mt-5 col-7'>
                 <Row>
                     <Col>
                     <FighterList fighters={fighters} fetchFighters={fetchFighters} fighterEditUpdate={fighterEditUpdate} updateOn={updateOn}/>
@@ -53,6 +54,7 @@ const SavedFighters = (props) => {
                         updateOff={updateOff} fetchFighters={fetchFighters}/> : <></>}
                 </Row>
             </Card>
+            </div>
         </div>
     )
 }

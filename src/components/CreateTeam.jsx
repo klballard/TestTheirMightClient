@@ -141,18 +141,22 @@ const CreateTeam = (props) => {
                 <Form>
                     <FormGroup>
                         <Label htmlFor='teamName'>Enter a name for your team:</Label>
-                        <Input style={{width: '300px', marginLeft:'auto', marginRight:'auto'}} name='teamName' value={teamName} onChange={(e) => setTeamName(e.target.value)}/>
+                        <Input style={{width: '300px', marginLeft:'auto', marginRight:'auto', border:'2px solid black'}} name='teamName' value={teamName} onChange={(e) => setTeamName(e.target.value)}/>
                     </FormGroup>
                 </Form>
-                    <h5>Team power: {sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat, fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat, fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat, fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat, fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</h5>
+                <div style={{border:'3px solid black', backgroundColor:'white', width:'180px', marginLeft:'auto', marginRight:'auto'}}>
+                    <h5>Team power: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat, fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat, fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat, fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat, fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</b></span></h5>
+                    
+                </div>
+                <br/>
             </div>
             <div>
-            <Card>
+            <Card style={{backgroundColor:'transparent', border:'0px', textAlign:'center', width:'80%', marginLeft:'auto', marginRight:'auto'}}>
                 <Row>
                     
                     <Col>
-                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
-                            <CardTitle>Power level: {sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat])}</CardTitle>
+                        <Card style={{marginLeft:'46%', border:'3px solid black', width:'160px', height:'auto'}}>
+                            <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterOne.intelligence, fighterOne.strength, fighterOne.speed, fighterOne.durability, fighterOne.power, fighterOne.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterOne.id}>
                                 <tr><img alt='1' src={fighterOne.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -163,13 +167,13 @@ const CreateTeam = (props) => {
                                 <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                                 ))}</select>
                                 <br/>
-                                <Button onClick={fetchFighterOne}>Load Fighter #1</Button>
+                                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterOne}>Load Fighter #1</Button>
                             </Col>
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
-                        <CardTitle>Power level: {sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat])}</CardTitle>
+                        <Card style={{border:'3px solid black', width:'160px', height:'auto', marginLeft:'30%'}}>
+                        <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterTwo.intelligence, fighterTwo.strength, fighterTwo.speed, fighterTwo.durability, fighterTwo.power, fighterTwo.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterTwo.id}>
                                     <tr><img alt='2' src={fighterTwo.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -180,13 +184,13 @@ const CreateTeam = (props) => {
                                 <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                                 ))}</select>
                                 <br/>
-                                <Button onClick={fetchFighterTwo}>Load Fighter #2</Button>
+                                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterTwo}>Load Fighter #2</Button>
                             </Col>
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
-                        <CardTitle>Power level: {sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat])}</CardTitle>
+                        <Card style={{border:'3px solid black', width:'160px', height:'auto', marginLeft:'auto', marginRight:'auto'}}>
+                        <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterThree.intelligence, fighterThree.strength, fighterThree.speed, fighterThree.durability, fighterThree.power, fighterThree.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterThree.id}>
                                     <tr><img alt='3' src={fighterThree.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -197,13 +201,13 @@ const CreateTeam = (props) => {
                                 <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                                 ))}</select>
                                 <br/>
-                                <Button onClick={fetchFighterThree}>Load Fighter #3</Button>
+                                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterThree}>Load Fighter #3</Button>
                             </Col>
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
-                        <CardTitle>Power level: {sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat])}</CardTitle>
+                        <Card style={{border:'3px solid black', width:'160px', height:'auto', marginLeft:'-4%'}}>
+                        <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterFour.intelligence, fighterFour.strength, fighterFour.speed, fighterFour.durability, fighterFour.power, fighterFour.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterFour.id}>
                                     <tr><img alt='4' src={fighterFour.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -214,13 +218,13 @@ const CreateTeam = (props) => {
                                 <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                                 ))}</select>
                                 <br/>
-                                <Button onClick={fetchFighterFour}>Load Fighter #4</Button>
+                                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterFour}>Load Fighter #4</Button>
                             </Col>
                         </Card>
                     </Col>
                     <Col>
-                        <Card style={{marginTop:'30px', width:'150px', height:'auto'}}>
-                        <CardTitle>Power level: {sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</CardTitle>
+                        <Card style={{marginLeft:'-20%', border:'3px solid black', width:'160px', height:'auto'}}>
+                        <CardTitle>Power level: <span style={{fontFamily:'Open Sans'}}><b>{sum([fighterFive.intelligence, fighterFive.strength, fighterFive.speed, fighterFive.durability, fighterFive.power, fighterFive.combat])}</b></span></CardTitle>
                             <Col>
                                 <table key={fighterFive.id}>
                                     <tr><img alt='5' src={fighterFive.image} style={{ width:'100%', height:'auto'}}></img></tr>
@@ -231,7 +235,7 @@ const CreateTeam = (props) => {
                                 <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                                 ))}</select>
                                 <br/>
-                                <Button onClick={fetchFighterFive}>Load Fighter #5</Button>
+                                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterFive}>Load Fighter #5</Button>
                             </Col>
                         </Card>
                     </Col>
@@ -241,10 +245,11 @@ const CreateTeam = (props) => {
                 <br/>
                 
             </div>
-            <div style={{textAlign: 'center', marginLeft:'45%'}}>
+            <br/>
+            <div style={{marginTop:'-3%', textAlign: 'center', marginLeft:'45%'}}>
                 
                 <Row>
-                    <Button onClick={SaveTeam}>Save your team!</Button>
+                    <Button style={{border:'3px solid black', color:'black', backgroundColor:'white', fontSize:'28px'}} onClick={SaveTeam}>Save your team!</Button>
                 </Row>
             </div>
         </div>

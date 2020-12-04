@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,Table} from 'reactstrap';
+import {Button,Table,Card} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
 const UserList = (props) => {
@@ -17,10 +17,10 @@ const UserList = (props) => {
     const userMap = () => {
         return props.users.map((user) => {
             return(
-                <tr key={user.id}>
+                <tr style={{marginTop:'5%'}} key={user.id}>
                     <th scope='row'>{user.email}</th>
                     <td>********</td>
-                    <td>{user.createdAt}</td>
+                    <td style={{fontFamily:'Open Sans'}}>{user.createdAt}</td>
                     <td><Button color='danger' onClick={() => {deleteUser(user)}}>X</Button></td>
                 </tr>
             )
@@ -28,9 +28,10 @@ const UserList = (props) => {
     }
 
     return(
-        <>
+        <div style={{marginTop:'0%', backgroundColor:'transparent'}}>
+        <Card style={{padding:'10px', border:'5px solid black', width:'100%'}}>
+        <br/>
         <h3>Registered Users</h3>
-        <hr/>
         <Table>
             <thead>
                 <tr>
@@ -44,7 +45,8 @@ const UserList = (props) => {
                 {userMap()}
             </tbody>
         </Table>
-        </>
+        </Card>
+        </div>
     )
 }
 

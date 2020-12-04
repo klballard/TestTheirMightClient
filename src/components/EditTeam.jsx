@@ -28,15 +28,15 @@ const EditTeam = (props) => {
 
     return(
         <div>
-            <Modal isOpen={true}>
-                <ModalHeader>Edit Team</ModalHeader>
+            <Modal style={{textAlign:'center'}} isOpen={true}>
+                <ModalHeader style={{marginLeft:'auto', marginRight:'auto'}}>Edit Team</ModalHeader>
                 <ModalBody>
                     <Form onSubmit={teamNameUpdate}>
                         <FormGroup>
-                            <Label htmlFor='name'>Edit name</Label>
-                            <Input name='name' value={editName} onChange={(e) => setEditName(e.target.value)}/>
+                            <Label style={{fontSize:'18px'}} htmlFor='name'>Edit name</Label>
+                            <Input style={{width: '300px', marginLeft:'auto', marginRight:'auto', border:'2px solid black'}} name='name' value={editName} onChange={(e) => setEditName(e.target.value)}/>
                         </FormGroup>
-                        <Button type='submit'>Update</Button>
+                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} type='submit'>Update</Button>
                     </Form>
                 </ModalBody>
             </Modal>
