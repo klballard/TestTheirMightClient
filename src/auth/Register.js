@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} from 'reactstrap';
-import {makeStyles} from '@material-ui/core';
-import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
 
 function RegisterPlayer(props){
-    const {buttonLabel, className} = props;
+
     const [registerModal, setRegisterModal] = useState(false);
     const toggle = () => setRegisterModal(!registerModal);
     const [email, setEmail] = useState('');

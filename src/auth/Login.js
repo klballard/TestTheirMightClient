@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
 import {Modal, ModalHeader, ModalBody, Button, Input, Label, Form, FormGroup} from 'reactstrap';
-import {makeStyles} from '@material-ui/core';
-import "bootstrap/dist/css/bootstrap.min.css";
 import APIURL from '../helpers/environment';
 
 
 
 const LoginPlayer = (props) => {
-    const {buttonLabel, className} = props;
-   // const classes = useStyles();
+
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [sessionToken, setSessionToken] = useState('');
     const [loginModal, setLoginModal] = useState(false);
     const toggle = () => setLoginModal(!loginModal);
 

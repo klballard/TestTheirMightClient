@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import 'antd/dist/antd.css';
 import './App.css';
-import React, {useState,useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {makeStyles, ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';

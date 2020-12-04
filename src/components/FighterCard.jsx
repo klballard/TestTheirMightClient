@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Card, CardBody, CardImg, CardGroup, CardSubtitle, CardText, CardTitle, Col, Modal, ModalBody, ModalHeader, DropdownToggle,Dropdown,DropdownMenu,DropdownItem} from 'reactstrap';
-import {List, ListItem} from '@material-ui/core';
+import {Button, Card, CardBody, CardImg, CardGroup, CardTitle, Col, DropdownToggle, Dropdown, DropdownMenu, DropdownItem} from 'reactstrap';
 import APIURL from '../helpers/environment';
 
 

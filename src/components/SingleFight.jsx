@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Col, Row, Button} from 'reactstrap';
 import APIURL from '../helpers/environment';
-import { notification, Space } from 'antd';
 
 const SingleFight = (props) => {
 

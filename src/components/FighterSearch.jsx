@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Form, Container, Row, Input, InputGroup, Button, Jumbotron} from 'reactstrap';
-import {makeStyles} from '@material-ui/core';
 import FighterCard from './FighterCard';
 
 
@@ -11,7 +10,8 @@ const FighterSearch = (props) => {
     //let proxyURL ="https://cors-anywhere.herokuapp.com/";
     let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
-    const getData = () => {
+    const getData = (e) => {
+        e.preventDefault();
         fetch(baseURL)
             .then((res) => res.json())
             /*
@@ -42,8 +42,7 @@ const FighterSearch = (props) => {
 
     
 
-    const onSubmit = (event) => {
-        event.preventDefault();
+    const onSubmit = () => {
         getData();
     }
 
