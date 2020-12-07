@@ -37,7 +37,7 @@ const EditTeam = (props) => {
                             <Input style={{width: '300px', marginLeft:'auto', marginRight:'auto', border:'2px solid black'}} name='name' value={editName} onChange={(e) => setEditName(e.target.value)}/>
                         </FormGroup>
                         <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} type='submit'>Update</Button>
-                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={isOpen=false}>Cancel</Button>
+                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} isOpen={false}>Cancel</Button>
                     </Form>
                 </ModalBody>
             </Modal>
