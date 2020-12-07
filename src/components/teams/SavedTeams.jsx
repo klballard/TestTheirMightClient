@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Card,Col,Row} from 'reactstrap';
 import TeamList from './SavedTeamList';
 import EditTeam from './EditTeam';
-import APIURL from '../helpers/environment';
+import APIURL from '../../helpers/environment';
 
 
 const SavedTeams = (props) => {

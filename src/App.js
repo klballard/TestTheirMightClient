@@ -5,7 +5,7 @@ import {makeStyles, ThemeProvider, createMuiTheme} from '@material-ui/core/style
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import {BrowserRouter as Router} from 'react-router-dom';
-import MightNavbar from './components/MightNavbar';
+import MightNavbar from './components/features/MightNavbar';
 
 
 let useStyles = makeStyles((theme) => ({

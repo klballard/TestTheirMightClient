@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button,Table} from 'reactstrap';
-import APIURL from '../helpers/environment';
+import APIURL from '../../helpers/environment';
 
 
 const FighterList = (props) => {

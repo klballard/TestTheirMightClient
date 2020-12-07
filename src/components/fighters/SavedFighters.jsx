@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Card, Row, Col} from 'reactstrap';
 import FighterList from './SavedFighterList';
 import EditFighter from './EditFighter';
-import APIURL from '../helpers/environment';
+import APIURL from '../../helpers/environment';
 
 
 

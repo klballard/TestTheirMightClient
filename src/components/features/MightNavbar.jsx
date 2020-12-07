@@ -3,15 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {Route,Switch} from 'react-router-dom';
 import {Button,Collapse,Navbar,NavbarBrand,NavbarToggler,NavItem,Nav,NavLink,DropdownToggle,UncontrolledDropdown,DropdownMenu,DropdownItem} from 'reactstrap';
 import Homepage from './Homepage';
-import Auth from '../auth/Auth';
-import FighterSearch from './FighterSearch';
-import SavedFighters from './SavedFighters';
-import SingleFight from './SingleFight';
-import CreateTeam from './CreateTeam';
-import SavedTeams from './SavedTeams';
-import TeamFight from './TeamFight';
+import Auth from '../../auth/Auth';
+import FighterSearch from '../features/FighterSearch';
+import SavedFighters from '../fighters/SavedFighters';
+import SingleFight from '../fighters/SingleFight';
+import CreateTeam from '../teams/CreateTeam';
+import SavedTeams from '../teams/SavedTeams';
+import TeamFight from '../teams/TeamFight';
 import AdminPage from './AdminPage';
-//import user from '../../../server/models/user';
 
 
 

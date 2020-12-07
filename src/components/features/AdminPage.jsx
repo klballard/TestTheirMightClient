@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import {Card,Row,Col} from 'reactstrap';
-import APIURL from '../helpers/environment';
+import APIURL from '../../helpers/environment';
 import UserList from './UserList';
 
 

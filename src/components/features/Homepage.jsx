@@ -1,9 +1,7 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core';
-
 
 function Homepage(){
- //   const classes = useStyles();
+
     return(
         <div>
             <br/>
