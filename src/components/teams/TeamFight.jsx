@@ -127,14 +127,14 @@ const TeamFight = (props) => {
                                 <option key={team.id} value={team.id}>{team.teamName}</option>
                             ))}</select>
                             <br/>
-                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchTeamOne}>Ready Team 1?</Button>
+                            <Button style={{border:'3px solid black', color:'white', backgroundColor:'black'}} onClick={fetchTeamOne}>Ready Team 1?</Button>
                             </Row>
                         </Card>
                     </Col>
                     <div style={{marginTop:'350px'}}>
                         <h1>VS.</h1>
                         <br/>
-                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'white', fontSize:'28px'}} onClick={teamFightResults}>FIGHT!</Button>
+                        <Button style={{border:'3px solid black', color:'black', backgroundColor:'red', fontSize:'28px'}} onClick={teamFightResults}>FIGHT!</Button>
                     </div>
                     <Col>
                         <Card style={{border:'3px solid black', height:'23em'}}>
@@ -159,7 +159,7 @@ const TeamFight = (props) => {
                             </Col>
                             <Row></Row>
                             <Row style={{marginLeft:'auto', marginRight:'auto'}}>
-                            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchTeamTwo}>Ready Team 2?</Button>
+                            <Button style={{border:'3px solid black', color:'white', backgroundColor:'black'}} onClick={fetchTeamTwo}>Ready Team 2?</Button>
                             <br/>
                             <select value={secondSelect} onChange={e => setSecondSelect(e.currentTarget.value)}>{teams.map(team => (
                                 <option key={team.id} value={team.id}>{team.teamName}</option>

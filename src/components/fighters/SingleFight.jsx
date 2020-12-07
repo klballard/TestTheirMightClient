@@ -110,14 +110,14 @@ const SingleFight = (props) => {
                     <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
                     ))}</select>
                 <br/>
-            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterOne}>Ready Player One?</Button>
+            <Button style={{border:'3px solid black', color:'white', backgroundColor:'black'}} onClick={fetchFighterOne}>Ready Player One?</Button>
             </Row>
             </Card>
             </Col>
             <div style={{marginTop:'350px', textAlign:'center'}}>
             <h1>VS.</h1>
             <br/>
-            <Button style={{border:'3px solid black', color:'black', backgroundColor:'white', fontSize:'28px'}} onClick={fightResults}>FIGHT!</Button>
+            <Button style={{border:'3px solid black', color:'black', backgroundColor:'red', fontSize:'28px'}} onClick={fightResults}>FIGHT!</Button>
             </div>
             <Col>
             <Card style={{border:'solid 3px black', textAlign:'center', height:'auto', width:'300px', marginTop:'50px', marginLeft:'120px', marginRight:'auto'}}>
@@ -127,7 +127,7 @@ const SingleFight = (props) => {
                 </table>
                 </Row>
                 <Row style={{marginLeft:'auto', marginRight:'auto'}}>
-                <Button style={{border:'3px solid black', color:'black', backgroundColor:'white'}} onClick={fetchFighterTwo}>Ready Player Two?</Button>
+                <Button style={{border:'3px solid black', color:'white', backgroundColor:'black'}} onClick={fetchFighterTwo}>Ready Player Two?</Button>
                     <br/>
                 <select value={secondValue} onChange={e => setSecondValue(e.currentTarget.value)}>{fighters.map(fighter => (
                         <option key={fighter.id} value={fighter.id}>{fighter.fighterName}</option>
