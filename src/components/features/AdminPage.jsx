@@ -6,13 +6,13 @@ import UserList from './UserList';
 
 const AdminPage = (props) => {
     const [users, setUsers] = useState([]);
-
+    const accessToken = localStorage.getItem('token');
     const fetchUsers = () => {
         fetch(`${APIURL}/user/getall`, {
             method:'GET',
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization':localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {

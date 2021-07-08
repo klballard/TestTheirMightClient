@@ -3,13 +3,13 @@ import {Button,Table,Card} from 'reactstrap';
 import APIURL from '../../helpers/environment';
 
 const UserList = (props) => {
-    
+    const accessToken = localStorage.getItem('token');
     const deleteUser = (id) => {
         fetch(`${APIURL}/user/${id}`, {
             method:'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then(() => props.fetchUsers())
     }

@@ -8,7 +8,7 @@ const FighterSearch = (props) => {
     const [results, setResults] = useState([]);
     const [searchMessage, setSearchMessage] = useState('')
     //let proxyURL ="https://cors-anywhere.herokuapp.com/";
-    let baseURL = `https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
+    let baseURL = `https://hidden-basin-37125.herokuapp.com/https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
     
     const getData = () => {
         //e.preventDefault();
