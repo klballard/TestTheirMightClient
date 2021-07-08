@@ -4,7 +4,7 @@ import APIURL from '../../helpers/environment';
 
 const EditFighter = (props) => {
     const [editName, setEditName] = useState(props.fighterToEdit.fighterName);
-
+    const accessToken = localStorage.getItem('token');
     const fighterNameUpdate = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/fighter/${props.fighterToEdit.id}`, {
@@ -12,7 +12,7 @@ const EditFighter = (props) => {
             body: JSON.stringify({fighterName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => {
             props.fetchFighters();

@@ -16,13 +16,13 @@ const CreateTeam = (props) => {
     const [selectFour, setSelectFour] = useState([]);
     const [fighterFive, setFighterFive] = useState([]);
     const [selectFive, setSelectFive] = useState([]);
-
+    const accessToken = localStorage.getItem('token');
     const fetchFighterOne = () => {
         fetch(`${APIURL}/fighter/${selectOne}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {

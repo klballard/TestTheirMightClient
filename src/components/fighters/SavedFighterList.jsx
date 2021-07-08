@@ -4,13 +4,13 @@ import APIURL from '../../helpers/environment';
 
 
 const FighterList = (props) => {
-
+    const accessToken = localStorage.getItem('token');
     const deleteFighter = (fighter) => {
         fetch(`${APIURL}/fighter/${fighter.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then(() => props.fetchFighters())
     }

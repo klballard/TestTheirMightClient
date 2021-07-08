@@ -11,13 +11,14 @@ const SavedFighters = (props) => {
     const [fighters, setFighters] = useState([]);
     const [updateOpen, setUpdateOpen] = useState(false);
     const [fighterToEdit, setFighterToEdit] = useState({});
-
+    const accessToken = localStorage.getItem('token');
+    
     const fetchFighters = () => {
         fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {

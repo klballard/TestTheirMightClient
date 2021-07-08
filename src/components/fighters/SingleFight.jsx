@@ -9,13 +9,13 @@ const SingleFight = (props) => {
     const [fighters, setFighters] = useState([]);
     const [selectValue, setSelectValue] = useState([]);
     const [secondValue, setSecondValue] = useState([]);
-
+    const accessToken = localStorage.getItem('token');
     const fetchFighterOne = () => {
         fetch(`${APIURL}/fighter/${selectValue}`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -28,7 +28,7 @@ const SingleFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -41,7 +41,7 @@ const SingleFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {

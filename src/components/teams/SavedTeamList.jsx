@@ -4,17 +4,17 @@ import APIURL from '../../helpers/environment';
 
 
 const TeamList = (props) => {
-
+    const accessToken = localStorage.getItem('token');
     const deleteTeam = (team) => {
         fetch(`${APIURL}/team/${team.id}`, {
             method:'DELETE',
             headers:new Headers({
                 'Content-Type':'application/json',
-                'Authorization':localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then(() => props.fetchTeams())
     }
-
+    
     const teamMap = () => {
         return props.teams.map((team, index) => {
             return(

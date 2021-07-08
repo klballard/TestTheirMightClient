@@ -10,7 +10,7 @@ const EditTeam = (props) => {
     const [editFighterThree, setEditFighterThree] = useState(props.teamToEdit.fighterThree);
     const [editFighterFour, setEditFighterFour] = useState(props.teamToEdit.fighterFour);
     const [editFighterFive, setEditFighterFive] = useState(props.teamToEdit.fighterFive);*/
-    
+    const accessToken = localStorage.getItem('token');
     const teamNameUpdate = (event) => {
         event.preventDefault();
         fetch(`${APIURL}/team/${props.teamToEdit.id}`, {
@@ -18,7 +18,7 @@ const EditTeam = (props) => {
             body: JSON.stringify({teamName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => {
             props.fetchTeams();

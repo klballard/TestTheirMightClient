@@ -11,6 +11,8 @@ const FighterCard = (props) => {
     console.log(props.results.powerstats.intelligence);
     console.log(props.image);
 
+    const accessToken = localStorage.getItem('token');
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
     
@@ -20,11 +22,11 @@ const FighterCard = (props) => {
             e.preventDefault();
             fetch(`${APIURL}/fighter/save`, {
                 method:'POST',
-                body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.results.image.url}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.token
-                })
+                    'Authorization': `Bearer ${accessToken}`
+                }),
+                body: JSON.stringify({fighterName: props.results.name, intelligence: props.results.powerstats.intelligence, strength: props.results.powerstats.strength, speed: props.results.powerstats.speed, durability: props.results.powerstats.durability, power: props.results.powerstats.power, combat: props.results.powerstats.combat, image: props.results.image.url}),
             }).then((res) => res.json())
             .then((fighter) => {
                 console.log(fighter, 'it worked');

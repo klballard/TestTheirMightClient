@@ -8,7 +8,7 @@ const TeamFight = (props) => {
     const [teamTwo, setTeamTwo] = useState([]);
     const [firstSelect, setFirstSelect] = useState([]);
     const [secondSelect, setSecondSelect] = useState([]);
-
+    const accessToken = localStorage.getItem('token');
     const fetchTeamOne = () => {
         fetch(`${APIURL}/team/${firstSelect}`, {
             method:'GET',
@@ -16,7 +16,7 @@ const TeamFight = (props) => {
             headers: new Headers({
                 //"Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -29,7 +29,7 @@ const TeamFight = (props) => {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {
@@ -42,7 +42,7 @@ const TeamFight = (props) => {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {

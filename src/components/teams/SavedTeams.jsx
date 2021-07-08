@@ -9,13 +9,13 @@ const SavedTeams = (props) => {
     const [teams, setTeams] = useState([]);
     const [updateOpen, setUpdateOpen] = useState(false);
     const [teamToEdit, setTeamToEdit] = useState({});
-
+    const accessToken = localStorage.getItem('token');
     const fetchTeams = (props) => {
         fetch(`${APIURL}/team/getall`, {
             method:'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((listData) => {
