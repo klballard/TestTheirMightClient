@@ -19,8 +19,7 @@ function RegisterPlayer(props){
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-        }).then(
-            (response) => response.json()
+        }).then((response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken);
             props.updateUserRole(data.user.isAdmin.toString());
