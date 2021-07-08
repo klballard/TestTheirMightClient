@@ -22,6 +22,7 @@ const FighterCard = (props) => {
             e.preventDefault();
             fetch(`${APIURL}/fighter/save`, {
                 method:'POST',
+                mode: 'no-cors',
                 headers: new Headers({
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${accessToken}`

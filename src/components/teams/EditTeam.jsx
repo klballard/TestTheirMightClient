@@ -15,6 +15,7 @@ const EditTeam = (props) => {
         event.preventDefault();
         fetch(`${APIURL}/team/${props.teamToEdit.id}`, {
             method:'PUT',
+            mode: 'no-cors',
             body: JSON.stringify({teamName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',

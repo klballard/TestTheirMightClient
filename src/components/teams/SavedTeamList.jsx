@@ -8,6 +8,7 @@ const TeamList = (props) => {
     const deleteTeam = (team) => {
         fetch(`${APIURL}/team/${team.id}`, {
             method:'DELETE',
+            mode: 'no-cors',
             headers:new Headers({
                 'Content-Type':'application/json',
                 'Authorization': `Bearer ${accessToken}`

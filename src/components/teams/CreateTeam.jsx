@@ -20,6 +20,7 @@ const CreateTeam = (props) => {
     const fetchFighterOne = () => {
         fetch(`${APIURL}/fighter/${selectOne}`, {
             method: 'GET',
+            mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`

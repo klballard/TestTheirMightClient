@@ -16,6 +16,7 @@ const SavedFighters = (props) => {
     const fetchFighters = () => {
         fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
+            mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
