@@ -15,7 +15,7 @@ function RegisterPlayer(props){
         fetch(`${APIURL}/user/register`, {
             method:'POST',
             mode: 'no-cors',
-            body: JSON.stringify({email:email, password:password}),
+            body: JSON.stringify({user:{email:email, password:password}}),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
