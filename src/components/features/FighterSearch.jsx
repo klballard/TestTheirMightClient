@@ -7,14 +7,19 @@ const FighterSearch = (props) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [results, setResults] = useState([]);
     const [searchMessage, setSearchMessage] = useState('')
-    //let proxyURL ="https://cors-anywhere.herokuapp.com/";
-    let baseURL = `https://hidden-basin-37125.herokuapp.com/https://superheroapi.com/api/10157622918662045/search/${searchQuery}`
+    //let proxyURL ="https://cors-anywhere.herokuapp.com/", https://hidden-basin-37125.herokuapp.com/;
+    let baseURL = "https://superheroapi.com/api/10157622918662045";
     
     const getData = () => {
         //e.preventDefault();
-        fetch(baseURL)
+        fetch(`${baseURL}/search/${searchQuery}`)
             .then((res) => res.json())
             /*
+            `${baseURL}`, {
+            mode: 'no-cors'
+        }
+
+
             .then((data) => {
                 console.log(data);
                 setResults(data.results);
@@ -34,9 +39,9 @@ const FighterSearch = (props) => {
         console.log(results);
         setSearchQuery('');
         if(results.length == null){
-            setSearchMessage('That fighter will be future DLC. Try again!')
+            setSearchMessage('That fighter will be future DLC. Try again!');
         } else {
-            setSearchMessage('')
+            setSearchMessage('');
         }
     };
 

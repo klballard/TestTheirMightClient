@@ -8,7 +8,7 @@ const FighterList = (props) => {
     const deleteFighter = (fighter) => {
         fetch(`${APIURL}/fighter/${fighter.id}`, {
             method: 'DELETE',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`

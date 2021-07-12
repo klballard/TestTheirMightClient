@@ -7,7 +7,7 @@ const UserList = (props) => {
     const deleteUser = (id) => {
         fetch(`${APIURL}/user/${id}`, {
             method:'DELETE',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`

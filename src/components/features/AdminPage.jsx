@@ -10,7 +10,7 @@ const AdminPage = (props) => {
     const fetchUsers = () => {
         fetch(`${APIURL}/user/getall`, {
             method:'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type':'application/json',
                 'Authorization': `Bearer ${accessToken}`

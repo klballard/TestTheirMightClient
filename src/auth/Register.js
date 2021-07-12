@@ -14,16 +14,19 @@ function RegisterPlayer(props){
         e.preventDefault();
         fetch(`${APIURL}/user/register`, {
             method:'POST',
-            mode: 'no-cors',
-            body: JSON.stringify({user:{email:email, password:password}}),
+            //mode: 'no-cors',
+            body: JSON.stringify({email:email, password:password}),
             headers: new Headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             })
         }).then((response) => response.json()
         ).then((data) => {
             props.updateToken(data.sessionToken);
             props.updateUserRole(data.user.isAdmin.toString());
-        }).then(alert('Your account has been created!'))
+            console.log('Account registered.')
+        }).catch(err => {
+            console.error(err)
+        })
     };
 
     return(

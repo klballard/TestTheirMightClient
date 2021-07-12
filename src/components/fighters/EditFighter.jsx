@@ -9,7 +9,7 @@ const EditFighter = (props) => {
         event.preventDefault();
         fetch(`${APIURL}/fighter/${props.fighterToEdit.id}`, {
             method:'PUT',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             body: JSON.stringify({fighterName: editName}),
             headers: new Headers({
                 'Content-Type':'application/json',

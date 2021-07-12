@@ -13,7 +13,7 @@ const SingleFight = (props) => {
     const fetchFighterOne = () => {
         fetch(`${APIURL}/fighter/${selectValue}`, {
             method: 'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
@@ -27,7 +27,7 @@ const SingleFight = (props) => {
     const fetchFighterTwo = () => {
         fetch(`${APIURL}/fighter/${secondValue}`, {
             method: 'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
@@ -41,7 +41,7 @@ const SingleFight = (props) => {
     const fetchFighters = () => {
         fetch(`${APIURL}/fighter/getall`, {
             method: 'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
