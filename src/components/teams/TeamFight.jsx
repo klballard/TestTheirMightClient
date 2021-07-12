@@ -12,8 +12,8 @@ const TeamFight = (props) => {
     const fetchTeamOne = () => {
         fetch(`${APIURL}/team/${firstSelect}`, {
             method:'GET',
-            mode: 'no-cors',
-            //body: JSON.stringify(),
+            //mode: 'no-cors',
+            body: JSON.stringify(),
             headers: new Headers({
                 //"Accept": "application/json",
                 "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const TeamFight = (props) => {
     const fetchTeamTwo = () => {
         fetch(`${APIURL}/team/${secondSelect}`, {
             method: 'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
@@ -42,7 +42,7 @@ const TeamFight = (props) => {
     const fetchTeams = () => {
         fetch(`${APIURL}/team/getall`, {
             method:'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
