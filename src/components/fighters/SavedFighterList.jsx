@@ -17,7 +17,7 @@ const FighterList = (props) => {
     }
 
     const fighterMap = () => {
-        return props.fighters.map((fighter, index) => {
+        return props.fighters.forEach((fighter, index) => {
             return(
                 <tr key={index}>
                     <th scope='row'><img alt='fighterthumbnail' src={fighter.image} width='50' height='50'></img><br/>{fighter.fighterName}</th>
