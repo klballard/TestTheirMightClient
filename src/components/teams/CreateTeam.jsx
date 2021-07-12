@@ -126,7 +126,7 @@ const CreateTeam = (props) => {
         }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.token
+                'Authorization': `Bearer ${accessToken}`
             })
         }).then((res) => res.json())
         .then((team) => {
