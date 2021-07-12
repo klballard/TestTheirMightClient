@@ -16,8 +16,8 @@ const LoginPlayer = (props) => {
         e.preventDefault();
         fetch(`${APIURL}/user/login`, {
             method:'POST',
-            mode: 'no-cors',
-            body: JSON.stringify({user:{email:email, password:password}}),
+            //mode: 'no-cors',
+            body: JSON.stringify({email:email, password:password}),
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
