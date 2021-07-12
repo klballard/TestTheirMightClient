@@ -13,7 +13,7 @@ const SavedTeams = (props) => {
     const fetchTeams = (props) => {
         fetch(`${APIURL}/team/getall`, {
             method:'GET',
-            mode: 'no-cors',
+            //mode: 'no-cors',
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
